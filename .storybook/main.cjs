@@ -16,5 +16,7 @@ module.exports = {
     if (configType === "PRODUCTION") {
       config.base = "/c6r-design-system/";
     }
+
+    return config;
   },
 };
