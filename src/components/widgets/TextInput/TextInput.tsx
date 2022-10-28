@@ -8,9 +8,9 @@ export interface TextInputRootProps {
 
 const TextInputRoot = ({ children }: TextInputRootProps) => {
   return (
-    <label className="w-full h-12 px-3 py-4 flex justify-center items-center gap-3 bg-gray-800 text-gray-100 rounded focus-within:ring-2 focus-within:ring-cyan-300">
+    <div className="w-full h-12 px-3 py-4 flex justify-center items-center gap-3 bg-gray-800 text-gray-100 rounded focus-within:ring-2 focus-within:ring-cyan-300">
       {children}
-    </label>
+    </div>
   );
 };
 
@@ -22,7 +22,7 @@ const TextInputInput = ({ ...props }: TextInputInputProps) => {
     <input
       {...props}
       className={c(
-        "flex-1 h-full text-sm rounded",
+        "flex-1 py-4 bg-transparent text-sm rounded",
         "placeholder:text-gray-400",
         "focus:outline-none"
       )}
