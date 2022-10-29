@@ -1,7 +1,8 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.1.0",
+  "name": "c6r-design-system",
+  "main": "index.ts",
+  "private": false,
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -22,10 +23,10 @@
   "devDependencies": {
     "@babel/core": "^7.19.6",
     "@storybook/addon-a11y": "^6.5.13",
-    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.12",
-    "@storybook/addon-interactions": "^6.5.12",
-    "@storybook/addon-links": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
     "@storybook/builder-vite": "^0.2.4",
     "@storybook/react": "^6.5.12",
     "@storybook/storybook-deployer": "^2.8.16",

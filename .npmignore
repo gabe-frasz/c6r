@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Storybook
+storybook-static
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# root directories
+.github
+.storybook
+public
+
+# root files
+.editorconfig
+index.html
+*.config.{cjs,ts}
+tsconfig*
+
+# other stuff
+src/App.tsx
+src/main.tsx
+src/vite-env.d.ts
+src/globals.css
+src/**/*.stories.tsx
