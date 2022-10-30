@@ -30,6 +30,7 @@ storybook-static
 .github
 .storybook
 public
+coverage
 
 # root files
 .editorconfig
@@ -42,4 +43,6 @@ src/App.tsx
 src/main.tsx
 src/vite-env.d.ts
 src/globals.css
-src/**/*.stories.tsx
+src/**/*.stories.*
+src/tests
+src/**/*.spec.*
