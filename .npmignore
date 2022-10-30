@@ -27,6 +27,7 @@ storybook-static
 *.sw?
 
 # root directories
+.changeset
 .github
 .storybook
 public
@@ -37,6 +38,7 @@ coverage
 index.html
 *.config.{cjs,ts}
 tsconfig*
+CHANGELOG.md
 
 # other stuff
 src/App.tsx
