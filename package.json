@@ -1,8 +1,8 @@
 {
-  "name": "c6r-design-system",
+  "name": "@gabe_frasz/c6r-design-system",
   "main": "index.ts",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,7 @@
     "deploy-sb": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@changesets/cli": "^2.25.1",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-slot": "^1.0.1",
     "clsx": "^1.2.1",
