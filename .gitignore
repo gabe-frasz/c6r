@@ -5,13 +5,17 @@ node_modules
 .pnp
 .pnp.js
 
-# testing
+# tests
 coverage
+/cypress/screenshots
+/cypress/videos
+/.nyc_output
 
-# next.js
+# compiled output
 .next/
 out/
 build
+dist
 
 # misc
 .DS_Store
@@ -24,10 +28,40 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env
+.env*.local
+
+# vercel
+.vercel
 
 # turbo
 .turbo
+
+# service workers
+/public/sw.js*
+/public/worker-*.js*
+/public/workbox-*.js*
+
+# storybook
+/storybook-static
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# others IDEs and editors
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
