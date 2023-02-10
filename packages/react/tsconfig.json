@@ -1,0 +1,9 @@
+{
+  "extends": "tsconfig/react-library",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/*"]
+}
