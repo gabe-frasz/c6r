@@ -1,22 +1,29 @@
 {
   "name": "c6r",
-  "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "dependencies": {},
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^16.0.0"
   },
-  "packageManager": "pnpm@7.26.3"
+  "packageManager": "pnpm@7.26.3",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
