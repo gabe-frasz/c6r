@@ -16,7 +16,7 @@ const config: StorybookConfig = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === "PRODUCTION") {
-      config.base = "c6r";
+      config.base = "/c6r";
     }
 
     return config;
