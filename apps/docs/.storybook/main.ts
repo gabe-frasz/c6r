@@ -14,6 +14,13 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true,
   },
+  viteFinal: (config, { configType }) => {
+    if (configType === "PRODUCTION") {
+      config.base = "c6r";
+    }
+
+    return config;
+  },
 };
 
 export default config;
