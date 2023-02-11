@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "deploy": "storybook-to-ghpages"
+    "deploy": "storybook-to-ghpages --ci --existing-output-dir=storybook-static"
   },
   "dependencies": {
     "@c6r/react": "workspace:*",
