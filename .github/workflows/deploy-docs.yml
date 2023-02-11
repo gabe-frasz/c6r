@@ -24,10 +24,10 @@ jobs:
         run: pnpm install
 
       - name: Build Storybook
-        run: pnpm run build
+        run: pnpm run build:docs
 
       - name: Deploy Storybook
         working-directory: ./apps/docs
-        run: npm run deploy -- --ci --existing-output-dir=storybook-static
+        run: pnpm run deploy -- --ci --existing-output-dir=storybook-static
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
