@@ -8,11 +8,15 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "build:docs": "turbo run build --filter @c6r/docs",
+    "build:docs": "turbo run build --filter=@c6r/docs",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=\\!@c6r/docs && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",

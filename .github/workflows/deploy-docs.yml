@@ -26,6 +26,9 @@ jobs:
 
       - name: Build Storybook
         run: pnpm run build:docs
+        env:
+          TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+          TURBO_TEAM: gabe-frasz
 
       - name: Deploy Storybook
         working-directory: ./apps/docs
