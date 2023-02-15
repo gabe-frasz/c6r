@@ -1,7 +1,19 @@
 {
   "name": "@c6r/react",
   "version": "1.1.0",
-  "description": "",
+  "description": "UI kit for React by me.",
+  "author": "Gabriel VS Frasão <gabrielvitor.frasao@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "tailwindcss",
+    "radix-ui",
+    "ui-kit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabe-frasz/c6r"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,9 +22,6 @@
     "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch",
     "build": "tsup src/index.ts --format esm,cjs --dts --external react"
   },
-  "keywords": [],
-  "author": "Gabriel VS Frasão <gabrielvitor.frasao@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "@headlessui/react": "^1.7.10",
     "@radix-ui/react-avatar": "^1.0.1",
