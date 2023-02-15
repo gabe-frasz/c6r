@@ -9,11 +9,12 @@ export default {
   },
   argTypes: {
     variant: {
-      options: ["default", "outline", "ghost"],
+      options: ["default", "outline", "ghost", "success", "error"],
       control: {
         type: "inline-radio",
       },
     },
+    onClick: { action: "clicked" },
   },
 } as Meta<ButtonProps>;
 
@@ -27,11 +28,26 @@ export const Outline: StoryObj<ButtonProps> = {
   args: {
     variant: "outline",
   },
+  parameters: {},
 };
 
 export const Ghost: StoryObj<ButtonProps> = {
   args: {
     variant: "ghost",
+  },
+};
+
+export const Success: StoryObj<ButtonProps> = {
+  args: {
+    variant: "success",
+    children: "Accept",
+  },
+};
+
+export const Error: StoryObj<ButtonProps> = {
+  args: {
+    variant: "error",
+    children: "Delete",
   },
 };
 
@@ -45,5 +61,6 @@ export const Loading: StoryObj<ButtonProps> = {
 export const Disabled: StoryObj<ButtonProps> = {
   args: {
     disabled: true,
+    children: "Don't click me",
   },
 };

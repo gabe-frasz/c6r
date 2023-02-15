@@ -2,7 +2,10 @@ const { zinc, blue, rose } = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.tsx", "./node_modules/@c6r/react/**/index.{js,cjs}"],
+  content: [
+    "./src/**/*.{tsx,mdx}",
+    "./node_modules/@c6r/react/**/index.{js,cjs}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -17,5 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

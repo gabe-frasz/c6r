@@ -1,10 +1,20 @@
-import { Input, InputRootProps } from "@c6r/react";
+import { Input, InputRootProps, Label } from "@c6r/react";
 import { Meta, StoryObj } from "@storybook/react";
 import { At } from "phosphor-react";
 
 export default {
   title: "Form/Input",
   component: Input.Root,
+  decorators: [
+    (Story) => {
+      return (
+        <Label>
+          Email
+          {Story()}
+        </Label>
+      );
+    },
+  ],
   args: {
     children: [
       <Input.Icon key={1}>
@@ -45,8 +55,6 @@ export const RightIcon: StoryObj<InputRootProps> = {
 
 export const WithoutIcon: StoryObj<InputRootProps> = {
   args: {
-    children: (
-      <Input.Field type="password" placeholder="Type your password here" />
-    ),
+    children: <Input.Field placeholder="e.g. johndoe@example.com" />,
   },
 };
