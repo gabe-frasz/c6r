@@ -14,7 +14,12 @@
   "author": "Gabriel VS Frasão <gabrielvitor.frasao@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@headlessui/react": "^1.7.10",
     "@radix-ui/react-avatar": "^1.0.1",
+    "@radix-ui/react-checkbox": "^1.0.1",
+    "@radix-ui/react-dialog": "^1.0.2",
+    "@radix-ui/react-label": "^2.0.0",
+    "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-slot": "^1.0.1",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",

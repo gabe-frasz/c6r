@@ -29,7 +29,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <motion.button
         {...props}
         ref={ref}
-        disabled={disabled}
+        disabled={isLoading || disabled}
         variants={variants}
         initial="initial"
         whileTap={disabled ? "disabled" : "hover"}

@@ -14,7 +14,7 @@ const Root = forwardRef<HTMLDivElement, InputRootProps>(
       <div
         ref={ref}
         className={c(
-          "w-full h-12 px-3 py-4 flex justify-center items-center gap-3 bg-base-200 text-base-content rounded focus-within:ring-2 focus-within:ring-primary-300",
+          "w-full h-12 px-3 py-4 flex justify-center items-center gap-3 bg-base-200 text-base-content rounded focus-within:ring-2 focus-within:ring-primary-300 focus-within:ring-offset-2 focus-within:ring-offset-base-100",
           className,
         )}
       >
@@ -54,7 +54,7 @@ export interface InputIconProps {
 const Icon = forwardRef<HTMLSlotElement, InputIconProps>(
   ({ className = "", children }) => {
     return (
-      <Slot className={c("w-6 h-6 text-base-content", className)}>
+      <Slot className={c("w-6 h-6 text-primary-300", className)}>
         {children}
       </Slot>
     );

@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 
-export const text = cva("text-base-content", {
+export const text = cva("text-base-content selection:bg-primary-400", {
   variants: {
     size: {
       xxs: "text-[0.625rem]",
