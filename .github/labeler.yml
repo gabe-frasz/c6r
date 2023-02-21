@@ -1,0 +1,6 @@
+'@c6r/react':
+  - packages/react/*
+  - packages/react/**/*
+  
+test:
+  - src/**/*.spec.*
