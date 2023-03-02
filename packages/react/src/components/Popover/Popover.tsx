@@ -3,7 +3,6 @@ import * as Primitive from "@radix-ui/react-popover";
 import { forwardRef, Fragment } from "react";
 
 import { c } from "@/utils";
-import { Button, ButtonProps } from "../Button";
 
 export interface PopoverRootProps extends Primitive.PopoverProps {}
 
@@ -15,15 +14,13 @@ const Root = forwardRef<HTMLElement, PopoverRootProps>(
 
 Root.displayName = "Popover.Root";
 
-export interface PopoverTriggerProps extends ButtonProps {}
+export interface PopoverTriggerProps extends Primitive.PopoverTriggerProps {}
 
 const Trigger = forwardRef<HTMLButtonElement, PopoverTriggerProps>(
   ({ children, ...props }, ref) => {
     return (
-      <Primitive.Trigger asChild>
-        <Button {...props} ref={ref}>
-          {children}
-        </Button>
+      <Primitive.Trigger {...props} ref={ref}>
+        {children}
       </Primitive.Trigger>
     );
   },

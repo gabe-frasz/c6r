@@ -4,7 +4,6 @@ import { X } from "phosphor-react";
 import { forwardRef, Fragment } from "react";
 
 import { c } from "@/utils";
-import { Button, ButtonProps } from "../Button";
 import { Heading, HeadingProps } from "../Heading";
 import { Text, TextProps } from "../Text";
 
@@ -18,15 +17,13 @@ const Root = forwardRef<HTMLDivElement, ModalRootProps>(
 
 Root.displayName = "Modal.Root";
 
-export interface ModalTriggerProps extends ButtonProps {}
+export interface ModalTriggerProps extends Primitive.DialogTriggerProps {}
 
 const Trigger = forwardRef<HTMLButtonElement, ModalTriggerProps>(
   ({ children, ...props }, ref) => {
     return (
-      <Primitive.Trigger asChild>
-        <Button {...props} ref={ref}>
-          {children}
-        </Button>
+      <Primitive.Trigger {...props} ref={ref}>
+        {children}
       </Primitive.Trigger>
     );
   },
@@ -69,7 +66,10 @@ const Content = forwardRef<HTMLDivElement, ModalContentProps>(
             {...props}
             ref={ref}
             forceMount
-            className={c("max-w-md fixed p-6 bg-base-100 rounded shadow top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-50", className)}
+            className={c(
+              "max-w-md fixed p-6 bg-base-100 rounded shadow top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-50",
+              className,
+            )}
           >
             <Primitive.Close className="w-5 h-5 p-0.5 absolute top-4 right-4 rounded-full outline-none transition-colors hover:bg-primary-300/20 focus:bg-primary-300/20">
               <X
