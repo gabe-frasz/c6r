@@ -1,6 +1,32 @@
-'@c6r/react':
+"@c6r/react":
   - packages/react/*
   - packages/react/**/*
-  
+
+enhancement:
+  - src/*
+  - src/**/*
+
 test:
-  - src/**/*.spec.*
+  - "**/*.spec.*"
+
+ci:
+  - .github/workflows/*
+
+web:
+  - apps/web/*.ts
+  - apps/web/**/*.ts
+
+mobile:
+  - apps/mobile/*
+  - apps/mobile/**/*
+
+server:
+  - apps/server/*
+  - apps/server/**/*
+
+docs:
+  - apps/docs/*
+  - apps/docs/**/*
+  - .github/docs/*
+  - .github/docs/**/*
+  - README.md

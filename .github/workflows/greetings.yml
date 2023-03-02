@@ -1,20 +1,20 @@
 name: Greetings
 
-on: 
+on:
   - pull_request_target
   - issues
 
 jobs:
   greeting:
     runs-on: ubuntu-latest
-    
+
     permissions:
       issues: write
       pull-requests: write
-      
+
     steps:
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Hello there! I just saw this is your first issue. First things first, I'm glad you took the time to help me. Take a look at CONTRIBUTING.md if you haven't (and if there is one...) and feel free to make a pull request. Soon I'll review your issue."
-        pr-message: "Hello there! I just saw this is your first time here. First things first, I'm glad you took the time to help me. Take a look at CONTRIBUTING.md if you haven't (and if there is one...)."
+        issue-message: "Welcome! I noticed this is your first issue. Thank you for taking the time to help me. Please refer to CONTRIBUTING.md (if available), and feel free to submit a pull request."
+        pr-message: "Thank you for your pull request! I'll review it as soon as possible. In the meantime, please take a look at the CONTRIBUTING.md file (if available). Your help is greatly appreciated."
