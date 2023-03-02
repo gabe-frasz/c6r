@@ -1,5 +1,11 @@
 # @c6r/react
 
+## 1.2.1
+
+### Patch Changes
+
+- 006886a: - remove default Button from Modal and Popover triggers
+
 ## 1.2.0
 
 ### Minor Changes
