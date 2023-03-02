@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 
 export const button = cva(
   [
-    "w-fit px-2 py-1 flex items-center gap-2 font-semibold uppercase border-2 rounded transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 outline-none",
+    "w-fit px-2 py-1 flex justify-center items-center gap-2 font-semibold uppercase border-2 rounded transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-100 outline-none",
     "disabled:opacity-50",
   ],
   {

@@ -11,7 +11,7 @@ import { Text, TextProps } from "../Text";
 export interface ModalRootProps extends Primitive.DialogProps {}
 
 const Root = forwardRef<HTMLDivElement, ModalRootProps>(
-  ({ open, children, ...props }, ref) => {
+  ({ open, children, ...props }) => {
     return <Primitive.Root {...props}>{children}</Primitive.Root>;
   },
 );
@@ -39,9 +39,9 @@ export interface ModalContentProps extends Primitive.DialogContentProps {
 }
 
 const Content = forwardRef<HTMLDivElement, ModalContentProps>(
-  ({ open, children, ...props }, ref) => {
+  ({ open, className, children, ...props }, ref) => {
     return (
-      <Transition show={open}>
+      <Transition show={open} className="absolute">
         <Transition.Child
           as={Fragment}
           enter="transition-opacity duration-100"
@@ -69,7 +69,7 @@ const Content = forwardRef<HTMLDivElement, ModalContentProps>(
             {...props}
             ref={ref}
             forceMount
-            className="max-w-md fixed p-6 bg-base-100 rounded shadow top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-50"
+            className={c("max-w-md fixed p-6 bg-base-100 rounded shadow top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-50", className)}
           >
             <Primitive.Close className="w-5 h-5 p-0.5 absolute top-4 right-4 rounded-full outline-none transition-colors hover:bg-primary-300/20 focus:bg-primary-300/20">
               <X
