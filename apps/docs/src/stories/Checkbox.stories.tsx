@@ -14,9 +14,6 @@ export default {
       );
     },
   ],
-  args: {
-    checked: true,
-  },
   argTypes: {
     variant: {
       options: ["fill", "light", "success"],
