@@ -1,5 +1,11 @@
 # @c6r/react
 
+## 1.2.2
+
+### Patch Changes
+
+- ecbecb4: - checkbox component is uncontrolled by default
+
 ## 1.2.1
 
 ### Patch Changes
