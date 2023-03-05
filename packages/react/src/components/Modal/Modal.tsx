@@ -10,8 +10,8 @@ import { Text, TextProps } from "../Text";
 export interface ModalRootProps extends Primitive.DialogProps {}
 
 const Root = forwardRef<HTMLDivElement, ModalRootProps>(
-  ({ open, children, ...props }) => {
-    return <Primitive.Root {...props}>{children}</Primitive.Root>;
+  ({ open, ...props }) => {
+    return <Primitive.Root {...props} />;
   },
 );
 
@@ -20,12 +20,8 @@ Root.displayName = "Modal.Root";
 export interface ModalTriggerProps extends Primitive.DialogTriggerProps {}
 
 const Trigger = forwardRef<HTMLButtonElement, ModalTriggerProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <Primitive.Trigger {...props} ref={ref}>
-        {children}
-      </Primitive.Trigger>
-    );
+  (props, ref) => {
+    return <Primitive.Trigger {...props} ref={ref} />;
   },
 );
 
@@ -33,10 +29,11 @@ Trigger.displayName = "Modal.Trigger";
 
 export interface ModalContentProps extends Primitive.DialogContentProps {
   open: boolean;
+  hideCloseButton?: boolean;
 }
 
 const Content = forwardRef<HTMLDivElement, ModalContentProps>(
-  ({ open, className, children, ...props }, ref) => {
+  ({ open, hideCloseButton = false, className, children, ...props }, ref) => {
     return (
       <Transition show={open} className="absolute">
         <Transition.Child
@@ -71,13 +68,15 @@ const Content = forwardRef<HTMLDivElement, ModalContentProps>(
               className,
             )}
           >
-            <Primitive.Close className="w-5 h-5 p-0.5 absolute top-4 right-4 rounded-full outline-none transition-colors hover:bg-primary-300/20 focus:bg-primary-300/20">
-              <X
-                size={16}
-                weight="bold"
-                className="w-full h-full text-primary-300"
-              />
-            </Primitive.Close>
+            {hideCloseButton ? null : (
+              <Primitive.Close className="w-5 h-5 p-0.5 absolute top-4 right-4 rounded-full outline-none transition-colors hover:bg-primary-300/20 focus:bg-primary-300/20">
+                <X
+                  size={16}
+                  weight="bold"
+                  className="w-full h-full text-primary-300"
+                />
+              </Primitive.Close>
+            )}
 
             {children}
           </Primitive.Content>
