@@ -6,23 +6,17 @@ import { c } from "@/utils";
 
 export interface PopoverRootProps extends Primitive.PopoverProps {}
 
-const Root = forwardRef<HTMLElement, PopoverRootProps>(
-  ({ children, ...props }) => {
-    return <Primitive.Root {...props}>{children}</Primitive.Root>;
-  },
-);
+const Root = forwardRef<HTMLElement, PopoverRootProps>(({ open, ...props }) => {
+  return <Primitive.Root {...props} />;
+});
 
 Root.displayName = "Popover.Root";
 
 export interface PopoverTriggerProps extends Primitive.PopoverTriggerProps {}
 
 const Trigger = forwardRef<HTMLButtonElement, PopoverTriggerProps>(
-  ({ children, ...props }, ref) => {
-    return (
-      <Primitive.Trigger {...props} ref={ref}>
-        {children}
-      </Primitive.Trigger>
-    );
+  (props, ref) => {
+    return <Primitive.Trigger {...props} ref={ref} />;
   },
 );
 
@@ -33,12 +27,12 @@ export interface PopoverContentProps extends Primitive.PopoverContentProps {
 }
 
 const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
-  ({ open, className, children, ...props }, ref) => {
+  ({ open, sideOffset = 5, className, children, ...props }, ref) => {
     return (
       <Transition
         show={open}
         as={Fragment}
-        enter="ease-out duration-1000"
+        enter="ease-out duration-100"
         enterFrom="opacity-0 scale-95"
         enterTo="opacity-100 scale-100"
         leave="ease-in duration-100"
@@ -47,6 +41,7 @@ const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
         <Primitive.Content
           {...props}
           ref={ref}
+          sideOffset={sideOffset}
           forceMount
           className={c(
             "bg-base-200 p-3 rounded shadow text-base-content",
