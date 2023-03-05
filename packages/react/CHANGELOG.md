@@ -1,5 +1,11 @@
 # @c6r/react
 
+## 1.3.1
+
+### Patch Changes
+
+- 15a8110: - fix transition duration on popover
+
 ## 1.3.0
 
 ### Minor Changes
