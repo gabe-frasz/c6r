@@ -1,5 +1,11 @@
 # @c6r/react
 
+## 1.3.0
+
+### Minor Changes
+
+- 40bc0c9: - add prop to show or hide close button on modal
+
 ## 1.2.2
 
 ### Patch Changes
