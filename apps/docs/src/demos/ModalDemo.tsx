@@ -1,12 +1,14 @@
-import { Modal } from "@c6r/react";
+import { Button, Modal } from "@c6r/react";
 import { useState } from "react";
 
 export const ModalDemo = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Modal.Root open={open} onOpenChange={setOpen}>
-      <Modal.Trigger>Open Modal</Modal.Trigger>
+    <Modal.Root onOpenChange={setOpen}>
+      <Modal.Trigger asChild>
+        <Button>Open Modal</Button>
+      </Modal.Trigger>
 
       <Modal.Content open={open}>
         <Modal.Title>Modal</Modal.Title>
