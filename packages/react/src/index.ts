@@ -8,4 +8,4 @@ export * from "./components/Modal";
 export * from "./components/Popover";
 export * from "./components/Progress";
 export * from "./components/Text";
-export * from "./utils";
+export { c } from "./utils";
