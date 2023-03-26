@@ -13,7 +13,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "pkg:version": "changeset version",
-    "pkg:publish": "turbo run build --filter=\\!@c6r/storybook && changeset publish"
+    "pkg:publish": "turbo run build --filter=@c6r/react && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
