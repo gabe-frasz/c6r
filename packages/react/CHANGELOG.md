@@ -1,5 +1,11 @@
 # @c6r/react
 
+## 1.4.0
+
+### Minor Changes
+
+- 3debe68: use react "use client" directive
+
 ## 1.3.1
 
 ### Patch Changes
