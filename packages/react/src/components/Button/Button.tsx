@@ -1,3 +1,5 @@
+"use client"
+
 import { VariantProps } from "class-variance-authority";
 import { HTMLMotionProps, motion } from "framer-motion";
 import { CircleNotch } from "phosphor-react";

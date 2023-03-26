@@ -1,8 +1,8 @@
 import { Root } from "@radix-ui/react-label";
+import { VariantProps } from "class-variance-authority";
 import { forwardRef, LabelHTMLAttributes } from "react";
 
 import { c } from "@/utils";
-import { VariantProps } from "class-variance-authority";
 import { Text } from "../Text";
 import { label } from "./Label.styles";
 

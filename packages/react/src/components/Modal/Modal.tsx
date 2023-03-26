@@ -1,3 +1,5 @@
+"use client";
+
 import { Transition } from "@headlessui/react";
 import * as Primitive from "@radix-ui/react-dialog";
 import { X } from "phosphor-react";

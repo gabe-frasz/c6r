@@ -1,6 +1,9 @@
-import { c } from "@/utils";
+"use client";
+
 import * as Primitive from "@radix-ui/react-progress";
 import { forwardRef } from "react";
+
+import { c } from "@/utils";
 
 export interface ProgressRootProps extends Primitive.ProgressProps {}
 

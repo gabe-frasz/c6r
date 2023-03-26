@@ -1,3 +1,5 @@
+"use client";
+
 import * as Primitive from "@radix-ui/react-checkbox";
 import { VariantProps } from "class-variance-authority";
 import { Check } from "phosphor-react";
