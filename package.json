@@ -8,12 +8,12 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "build:docs": "turbo run build --filter=@c6r/docs",
+    "build:sb": "turbo run build --filter=@c6r/storybook",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "pkg:version": "changeset version",
-    "pkg:publish": "turbo run build --filter=\\!@c6r/docs && changeset publish"
+    "pkg:publish": "turbo run build --filter=\\!@c6r/storybook && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
