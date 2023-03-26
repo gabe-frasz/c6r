@@ -13,8 +13,8 @@ ci:
   - .github/workflows/*
 
 web:
-  - apps/web/*.ts
-  - apps/web/**/*.ts
+  - apps/web/*
+  - apps/web/**/*
 
 mobile:
   - apps/mobile/*
@@ -30,3 +30,6 @@ docs:
   - .github/docs/*
   - .github/docs/**/*
   - README.md
+  - CONTRIBUTING.md
+  - apps/storybook/*
+  - apps/storybook/**/*

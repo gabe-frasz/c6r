@@ -25,13 +25,13 @@ jobs:
         run: pnpm install
 
       - name: Build Storybook
-        run: pnpm run build:docs
+        run: pnpm run build:sb
         env:
           TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
           TURBO_TEAM: gabe-frasz
 
       - name: Deploy Storybook
-        working-directory: ./apps/docs
+        working-directory: ./apps/storybook
         run: touch ./storybook-static/.nojekyll && pnpm run deploy
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

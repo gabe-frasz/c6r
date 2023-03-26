@@ -1,37 +1,47 @@
 {
   "name": "@c6r/docs",
+  "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build",
-    "deploy": "storybook-to-ghpages --ci --existing-output-dir=storybook-static"
+    "docusaurus": "docusaurus",
+    "dev": "docusaurus start",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
   },
   "dependencies": {
-    "@c6r/react": "workspace:*",
-    "phosphor-react": "^1.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@docusaurus/core": "2.4.0",
+    "@docusaurus/preset-classic": "2.4.0",
+    "@mdx-js/react": "^1.6.22",
+    "clsx": "^1.2.1",
+    "prism-react-renderer": "^1.3.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@storybook/addon-docs": "^6.5.16",
-    "@storybook/addon-essentials": "^7.0.0-beta.45",
-    "@storybook/addon-interactions": "^7.0.0-beta.45",
-    "@storybook/addon-links": "^7.0.0-beta.45",
-    "@storybook/addons": "^6.5.16",
-    "@storybook/react": "^7.0.0-beta.45",
-    "@storybook/react-vite": "^7.0.0-beta.45",
-    "@storybook/storybook-deployer": "^2.8.16",
-    "@storybook/testing-library": "^0.0.14-next.1",
-    "@storybook/theming": "^6.5.16",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
-    "@vitejs/plugin-react-swc": "^3.0.0",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "storybook": "^7.0.0-beta.45",
-    "tailwindcss": "^3.2.6",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.0"
+    "@docusaurus/module-type-aliases": "2.4.0",
+    "@tsconfig/docusaurus": "^1.0.5",
+    "typescript": "^4.7.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.14"
   }
 }

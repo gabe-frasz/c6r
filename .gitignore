@@ -39,6 +39,8 @@ lerna-debug.log*
 # turbo
 .turbo
 
+.docusaurus
+
 # service workers
 /public/sw.js*
 /public/worker-*.js*
