@@ -1,5 +1,30 @@
 # @c6r/react
 
+## 1.5.0
+
+### Minor Changes
+
+- 3e8eadc: - **Avatar**
+  - use composition
+  - allow custom fallback
+  - **Button, Checkbox**
+    - add theme variants
+  - **Modal**
+    - add mobile styling
+  - **Modal Popover, Progress**
+    - use context api
+- ed047ee: - **New components**
+  - Switch
+  - VisuallyHidden
+  - AspectRatio
+  - Skeleton
+  - SkeletonText
+
+### Patch Changes
+
+- 85281d5: - **Progress**
+  - fix accessibility
+
 ## 1.4.0
 
 ### Minor Changes
