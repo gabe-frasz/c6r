@@ -5,3 +5,7 @@
 section h2 {
   @apply mb-4;
 }
+
+section > div {
+  @apply flex flex-col sm:flex-row gap-4;
+}

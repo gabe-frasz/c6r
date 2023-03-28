@@ -8,6 +8,9 @@ import {
   Modal,
   Popover,
   Progress,
+  Skeleton,
+  SkeletonText,
+  Switch,
   Text,
 } from "@c6r/react";
 import { useState } from "react";
@@ -30,64 +33,116 @@ export default function App() {
       </Heading>
 
       <section>
+        <Heading>Alert</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
         <Heading>Avatar</Heading>
 
-        <div className="flex gap-4">
-          <Avatar src="https://github.com/gabe-frasz.png" />
-          <Avatar />
+        <div>
+          <Avatar.Root>
+            <Avatar.Image src="https://github.com/gabe-frasz.png" />
+
+            <Avatar.Fallback />
+          </Avatar.Root>
+
+          <Avatar.Root>
+            <Avatar.Fallback />
+          </Avatar.Root>
+
+          <Avatar.Root className="rounded-none w-fit aspect-auto">
+            <Avatar.Fallback>custom fallback</Avatar.Fallback>
+          </Avatar.Root>
         </div>
+      </section>
+
+      <section>
+        <Heading>Badge</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
+        <Heading>Breadcrumb</Heading>
+
+        <div>soon</div>
       </section>
 
       <section>
         <Heading>Buttons</Heading>
 
-        <div className="flex gap-4">
-          <Button>Primary</Button>
-          <Button variant="outline">Outline</Button>
+        <div>
+          <Button>Default</Button>
+          <Button variant="outline" theme="secondary">
+            Outline
+          </Button>
           <Button variant="ghost">Ghost</Button>
-          <Button variant="success">Success</Button>
+          <Button theme="success">Success</Button>
+          <Button theme="error">Error</Button>
+          <Button disabled>Disabled</Button>
+          <Button isLoading={true}>Whatever</Button>
         </div>
       </section>
 
       <section>
         <Heading>Checkbox</Heading>
 
-        <div className="flex gap-4">
-          <Checkbox />
-          <Checkbox variant="light" />
-          <Checkbox variant="success" />
+        <div>
+          <Checkbox defaultChecked />
+          <Checkbox defaultChecked variant="light" theme="secondary" />
+          <Checkbox defaultChecked theme="success" />
         </div>
+      </section>
+
+      <section>
+        <Heading>Code</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
+        <Heading>Divider</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
+        <Heading>Highlight</Heading>
+
+        <div>soon</div>
       </section>
 
       <section>
         <Heading>Input + Label</Heading>
 
-        <div className="flex gap-4">
+        <div>
           <Label>
-            <Text>Input 1</Text>
+            <Text>Without icon</Text>
 
             <Input.Root>
-              <Input.Field />
+              <Input.Field placeholder="Type something..." />
             </Input.Root>
           </Label>
 
           <Label>
-            <Text>Input 2</Text>
+            <Text>Left icon</Text>
 
             <Input.Root>
               <Input.Icon>
                 <span>🎉</span>
               </Input.Icon>
 
-              <Input.Field />
+              <Input.Field placeholder="Type something..." />
             </Input.Root>
           </Label>
 
           <Label>
-            <Text>Input 3</Text>
+            <Text>Right icon</Text>
 
             <Input.Root>
-              <Input.Field />
+              <Input.Field placeholder="Type something..." />
 
               <Input.Icon>
                 <span>🎉</span>
@@ -98,15 +153,24 @@ export default function App() {
       </section>
 
       <section>
+        <Heading>Link</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
         <Heading>Modal</Heading>
 
-        <div className="flex gap-4">
-          <Modal.Root onOpenChange={() => setFirstModalOpen((prev) => !prev)}>
+        <div>
+          <Modal.Root
+            open={firstModalOpen}
+            onOpenChange={() => setFirstModalOpen((prev) => !prev)}
+          >
             <Modal.Trigger asChild>
               <Button>With close button</Button>
             </Modal.Trigger>
 
-            <Modal.Content open={firstModalOpen}>
+            <Modal.Content>
               <Modal.Title>Some text</Modal.Title>
 
               <Modal.Description>
@@ -118,12 +182,16 @@ export default function App() {
             </Modal.Content>
           </Modal.Root>
 
-          <Modal.Root onOpenChange={() => setSecondModalOpen((prev) => !prev)}>
+          <Modal.Root
+            open={secondModalOpen}
+            onOpenChange={() => setSecondModalOpen((prev) => !prev)}
+            hideCloseButton
+          >
             <Modal.Trigger asChild>
               <Button>Without close button</Button>
             </Modal.Trigger>
 
-            <Modal.Content open={secondModalOpen} hideCloseButton>
+            <Modal.Content>
               <Modal.Title>Some text</Modal.Title>
 
               <Modal.Description>
@@ -140,13 +208,14 @@ export default function App() {
       <section>
         <Heading>Popover</Heading>
 
-        <div className="flex gap-4">
+        <div>
           <Popover.Root
+            open={firstPopoverOpen}
             onOpenChange={() => setFirstPopoverOpen((prev) => !prev)}
           >
-            <Popover.Trigger>Popover</Popover.Trigger>
+            <Popover.Trigger>Show popover</Popover.Trigger>
 
-            <Popover.Content open={firstPopoverOpen}>
+            <Popover.Content>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
               autem facilis ut accusamus eligendi. Libero, dolor repellendus.
               Enim corporis laborum repudiandae, esse necessitatibus dolore!
@@ -159,15 +228,71 @@ export default function App() {
       <section>
         <Heading>Progress</Heading>
 
-        <div className="flex gap-4">
+        <div>
           <div className="flex-1 flex flex-col gap-2">
-            <Progress.Root>
-              <Progress.Indicator progress={firstProgress} />
+            <Progress.Root value={firstProgress}>
+              <Progress.Indicator />
             </Progress.Root>
 
             <Button onClick={changeProgress}>Change progress</Button>
           </div>
         </div>
+      </section>
+
+      <section>
+        <Heading>Radio Group</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
+        <Heading>Select</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
+        <Heading>Skeleton</Heading>
+
+        <div>
+          <div className="flex-1 w-full ">
+            <div className="flex gap-4">
+              <Skeleton className="mb-4 w-12 aspect-square rounded-full" />
+              <Skeleton className="flex-1 h-12" />
+            </div>
+            <SkeletonText lines={4} className="gap-4" />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <Heading>Spinner</Heading>
+
+        <div>soon</div>
+      </section>
+
+      <section>
+        <Heading>Switch</Heading>
+
+        <div>
+          <Switch.Root defaultChecked size="sm" disabled>
+            <Switch.Thumb />
+          </Switch.Root>
+
+          <Switch.Root defaultChecked theme="secondary">
+            <Switch.Thumb />
+          </Switch.Root>
+
+          <Switch.Root defaultChecked size="lg" theme="success">
+            <Switch.Thumb />
+          </Switch.Root>
+        </div>
+      </section>
+
+      <section>
+        <Heading>Tooltip</Heading>
+
+        <div>soon</div>
       </section>
     </div>
   );
