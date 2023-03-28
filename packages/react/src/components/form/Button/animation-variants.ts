@@ -4,7 +4,7 @@ export const variants: Variants = {
   initial: {
     scale: 1,
   },
-  hover: {
+  active: {
     scale: 0.95,
     transition: {
       type: "spring",

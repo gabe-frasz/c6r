@@ -6,8 +6,8 @@ import { CircleNotch } from "phosphor-react";
 import { forwardRef } from "react";
 
 import { c } from "@/utils";
+import { variants } from "./animation-variants";
 import { button } from "./Button.styles";
-import { variants } from "./variants";
 
 export interface ButtonProps
   extends HTMLMotionProps<"button">,
@@ -16,33 +16,25 @@ export interface ButtonProps
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      variant,
-      isLoading,
-      disabled,
-      className,
-      children,
-      ...props
-    }: ButtonProps,
-    ref,
-  ) => {
+  ({ variant, theme, className, ...props }, ref) => {
+    const isButtonDisabled = props.isLoading || props.disabled;
+
     return (
       <motion.button
         {...props}
         ref={ref}
-        disabled={isLoading || disabled}
+        disabled={isButtonDisabled}
         variants={variants}
         initial="initial"
-        whileTap={disabled ? "disabled" : "hover"}
-        className={c(button({ variant, className }))}
+        whileTap={isButtonDisabled ? "disabled" : "active"}
+        className={c(button({ variant, theme }), className)}
       >
-        {isLoading ? (
+        {props.isLoading ? (
           <>
             <CircleNotch className="w-4 h-4 animate-spin" /> Please wait
           </>
         ) : (
-          children
+          props.children
         )}
       </motion.button>
     );
