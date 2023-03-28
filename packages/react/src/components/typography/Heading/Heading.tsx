@@ -1,26 +1,25 @@
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps } from "class-variance-authority";
-import { forwardRef, ReactNode } from "react";
+import { forwardRef, HTMLAttributes } from "react";
 
 import { c } from "@/utils";
 import { heading } from "./Heading.styles";
 
-export interface HeadingProps extends VariantProps<typeof heading> {
-  className?: string;
+export interface HeadingProps
+  extends HTMLAttributes<HTMLElement>,
+    VariantProps<typeof heading> {
   asChild?: boolean;
-  children?: ReactNode;
 }
 
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ size, className, asChild, children }, ref) => {
-    const Comp = asChild ? Slot : "h2";
+  ({ size, ...props }, ref) => {
+    const Comp = props.asChild ? Slot : "h2";
 
     return (
-      <Comp ref={ref} className={c(heading({ size, className }))}>
-        {children}
+      <Comp ref={ref} className={c(heading({ size }), props.className)}>
+        {props.children}
       </Comp>
     );
   },
 );
-
 Heading.displayName = "Heading";
