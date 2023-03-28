@@ -2,17 +2,22 @@
 
 import { Transition } from "@headlessui/react";
 import * as Primitive from "@radix-ui/react-popover";
-import { forwardRef, Fragment } from "react";
+import { forwardRef, Fragment, useContext } from "react";
 
 import { c } from "@/utils";
+import { PopoverContext } from "./PopoverContext";
 
-export interface PopoverRootProps extends Primitive.PopoverProps {}
+export interface PopoverProps extends Primitive.PopoverProps {
+  open: boolean;
+}
 
-const Root = forwardRef<HTMLElement, PopoverRootProps>(({ open, ...props }) => {
-  return <Primitive.Root {...props} />;
-});
-
-Root.displayName = "Popover.Root";
+const Root = ({ open, ...props }: PopoverProps) => {
+  return (
+    <PopoverContext.Provider value={{ open }}>
+      <Primitive.Root {...props} open={open} />
+    </PopoverContext.Provider>
+  );
+};
 
 export interface PopoverTriggerProps extends Primitive.PopoverTriggerProps {}
 
@@ -21,15 +26,14 @@ const Trigger = forwardRef<HTMLButtonElement, PopoverTriggerProps>(
     return <Primitive.Trigger {...props} ref={ref} />;
   },
 );
-
 Trigger.displayName = "Popover.Trigger";
 
-export interface PopoverContentProps extends Primitive.PopoverContentProps {
-  open: boolean;
-}
+export interface PopoverContentProps extends Primitive.PopoverContentProps {}
 
 const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
-  ({ open, sideOffset = 5, className, children, ...props }, ref) => {
+  (props, ref) => {
+    const { open } = useContext(PopoverContext);
+
     return (
       <Transition
         show={open}
@@ -41,24 +45,23 @@ const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
         leaveTo="opacity-0 scale-95"
       >
         <Primitive.Content
+          sideOffset={5}
           {...props}
           ref={ref}
-          sideOffset={sideOffset}
           forceMount
           className={c(
-            "bg-base-200 p-3 rounded shadow text-base-content",
-            className,
+            "w-screen max-w-md bg-base-200 p-3 rounded shadow text-base-content z-50 sm:w-fit",
+            props.className,
           )}
         >
           <Primitive.Arrow className="fill-base-200" />
 
-          {children}
+          {props.children}
         </Primitive.Content>
       </Transition>
     );
   },
 );
-
 Content.displayName = "Popover.Content";
 
 export const Popover = {
