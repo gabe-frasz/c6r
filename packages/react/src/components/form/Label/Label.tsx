@@ -2,8 +2,8 @@ import { Root } from "@radix-ui/react-label";
 import { VariantProps } from "class-variance-authority";
 import { forwardRef, LabelHTMLAttributes } from "react";
 
+import { Text } from "@/components";
 import { c } from "@/utils";
-import { Text } from "../Text";
 import { label } from "./Label.styles";
 
 export interface LabelProps
@@ -11,19 +11,17 @@ export interface LabelProps
     LabelHTMLAttributes<HTMLLabelElement> {}
 
 export const Label = forwardRef<HTMLLabelElement, LabelProps>(
-  ({ htmlFor, flex, className, children }, ref) => {
+  ({ flex, ...props }, ref) => {
     return (
       <Text weight="semibold" asChild>
         <Root
+          {...props}
           ref={ref}
-          htmlFor={htmlFor}
-          className={c(label({ flex, className }))}
-        >
-          {children}
-        </Root>
+          htmlFor={props.htmlFor}
+          className={c(label({ flex }), props.className)}
+        />
       </Text>
     );
   },
 );
-
 Label.displayName = "Label";
