@@ -2,4 +2,5 @@
 "@c6r/react": patch
 ---
 
-Fix
+- **Progress**
+  - fix accessibility

@@ -2,12 +2,12 @@
 "@c6r/react": minor
 ---
 
-- [Avatar]
+- **Avatar**
   - use composition
   - allow custom fallback
-- [Button, Checkbox]
+- **Button, Checkbox**
   - add theme variants
-- [Modal]
+- **Modal**
   - add mobile styling
-- [Modal, Popover, Progress]
+- **Modal Popover, Progress**
   - use context api
