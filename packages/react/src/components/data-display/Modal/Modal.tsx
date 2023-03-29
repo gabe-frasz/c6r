@@ -66,7 +66,7 @@ const Content = forwardRef<HTMLDivElement, ModalContentProps>((props, ref) => {
           ref={ref}
           forceMount
           className={c(
-            "w-full fixed p-6 bg-base-100 rounded shadow z-50 left-0 bottom-0 sm:max-w-md sm:left-auto sm:bottom-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2",
+            "w-full fixed p-6 bg-base-100 rounded shadow z-50 left-0 bottom-0 sm:max-w-md sm:bottom-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2",
             props.className,
           )}
         >
