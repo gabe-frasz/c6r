@@ -1,7 +1,9 @@
+import { VariantProps } from "class-variance-authority";
 import { createContext } from "react";
+import { switchRoot } from "./Switch.styles";
 
 interface SwitchContextValue {
-  size?: "sm" | "md" | "lg" | null;
+  size?: VariantProps<typeof switchRoot>["size"];
 }
 
 export const SwitchContext = createContext({} as SwitchContextValue);
