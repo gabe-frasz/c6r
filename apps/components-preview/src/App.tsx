@@ -1,4 +1,5 @@
 import {
+  Alert,
   Avatar,
   Button,
   Checkbox,
@@ -8,19 +9,24 @@ import {
   Modal,
   Popover,
   Progress,
+  RadioGroup,
   Select,
   Skeleton,
   SkeletonText,
   Spinner,
   Switch,
   Text,
+  Tooltip,
 } from "@c6r/react";
 import { useState } from "react";
 
 export default function App() {
+  const [firstAlertOpen, setFirstAlertOpen] = useState(false);
   const [firstModalOpen, setFirstModalOpen] = useState(false);
   const [secondModalOpen, setSecondModalOpen] = useState(false);
+  const [firstPopover, setFirstPopover] = useState(false);
   const [firstProgress, setFirstProgress] = useState(39);
+  const [firstTooltip, setFirstTooltip] = useState(false);
 
   function changeProgress() {
     const randomProgress = Math.floor(Math.random() * 101); // 0% <-> 100%
@@ -36,7 +42,27 @@ export default function App() {
       <section>
         <Heading>Alert</Heading>
 
-        <div>soon</div>
+        <div>
+          <Alert.Root open={firstAlertOpen} onOpenChange={setFirstAlertOpen}>
+            <Alert.Trigger>Alert</Alert.Trigger>
+
+            <Alert.Content>
+              <Alert.Title>Some title</Alert.Title>
+
+              <Alert.Description>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Libero, magni quia? Tempore, cumque deleniti facilis minus nam
+                doloremque iste. Saepe, quaerat architecto! Nisi cum nobis hic
+                alias dicta voluptatibus iusto.
+              </Alert.Description>
+
+              <footer className="mt-4 flex gap-4 justify-end">
+                <Alert.Cancel>Cancel</Alert.Cancel>
+                <Alert.Action>Do something bad</Alert.Action>
+              </footer>
+            </Alert.Content>
+          </Alert.Root>
+        </div>
       </section>
 
       <section>
@@ -204,10 +230,14 @@ export default function App() {
         <Heading>Popover</Heading>
 
         <div>
-          <Popover.Root>
-            <Popover.Trigger>Show popover</Popover.Trigger>
+          <Popover.Root open={firstPopover} onOpenChange={setFirstPopover}>
+            <Popover.Trigger asChild>
+              <Button variant="outline" theme="secondary">
+                Show popover
+              </Button>
+            </Popover.Trigger>
 
-            <Popover.Content className="data-[state=open]:opacity-100">
+            <Popover.Content>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
               autem facilis ut accusamus eligendi. Libero, dolor repellendus.
               Enim corporis laborum repudiandae, esse necessitatibus dolore!
@@ -222,7 +252,7 @@ export default function App() {
 
         <div>
           <div className="flex-1 flex flex-col gap-2">
-            <Progress.Root value={firstProgress}>
+            <Progress.Root className="z-40" value={firstProgress}>
               <Progress.Indicator />
             </Progress.Root>
 
@@ -234,7 +264,24 @@ export default function App() {
       <section>
         <Heading>Radio Group</Heading>
 
-        <div>soon</div>
+        <div>
+          <RadioGroup.Root>
+            <RadioGroup.Item value="esqueca">
+              Esqueça
+              <RadioGroup.Indicator />
+            </RadioGroup.Item>
+
+            <RadioGroup.Item value="ai">
+              Ai
+              <RadioGroup.Indicator />
+            </RadioGroup.Item>
+
+            <RadioGroup.Item value="toma">
+              Toma
+              <RadioGroup.Indicator />
+            </RadioGroup.Item>
+          </RadioGroup.Root>
+        </div>
       </section>
 
       <section>
@@ -332,7 +379,15 @@ export default function App() {
       <section>
         <Heading>Tooltip</Heading>
 
-        <div>soon</div>
+        <div>
+          <Tooltip.Provider>
+            <Tooltip.Root open={firstTooltip} onOpenChange={setFirstTooltip}>
+              <Tooltip.Trigger className="w-10 h-10">🎉</Tooltip.Trigger>
+
+              <Tooltip.Content>Lorem ipsum, dolor sit amet</Tooltip.Content>
+            </Tooltip.Root>
+          </Tooltip.Provider>
+        </div>
       </section>
     </div>
   );
