@@ -8,6 +8,7 @@
     "react",
     "tailwindcss",
     "radix-ui",
+    "headlessui",
     "ui-kit"
   ],
   "repository": {
@@ -24,6 +25,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.10",
+    "@radix-ui/react-alert-dialog": "^1.0.3",
     "@radix-ui/react-aspect-ratio": "^1.0.2",
     "@radix-ui/react-avatar": "^1.0.1",
     "@radix-ui/react-checkbox": "^1.0.1",
@@ -33,12 +35,13 @@
     "@radix-ui/react-progress": "^1.0.1",
     "@radix-ui/react-radio-group": "^1.1.2",
     "@radix-ui/react-select": "^1.2.1",
+    "@radix-ui/react-separator": "^1.0.2",
     "@radix-ui/react-slot": "^1.0.1",
     "@radix-ui/react-switch": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.5",
     "@radix-ui/react-visually-hidden": "^1.0.2",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
-    "framer-motion": "^9.0.2",
     "tailwind-merge": "^1.9.1"
   },
   "devDependencies": {
