@@ -1,5 +1,22 @@
 # @c6r/react
 
+## 1.6.0
+
+### Minor Changes
+
+- 768bf21: **New components**
+
+  - Divider
+  - Select
+  - Spinner
+
+  **Refactor**
+
+  - Popover
+    - removed open/closed transition
+  - Button
+    - changed framer-motion click animation for tailwind
+
 ## 1.5.0
 
 ### Minor Changes
