@@ -1,23 +1,13 @@
 "use client";
 
-import { Transition } from "@headlessui/react";
 import * as Primitive from "@radix-ui/react-popover";
-import { forwardRef, Fragment, useContext } from "react";
+import { forwardRef } from "react";
 
 import { c } from "@/utils";
-import { PopoverContext } from "./PopoverContext";
 
-export interface PopoverProps extends Primitive.PopoverProps {
-  open: boolean;
-}
+export interface PopoverProps extends Primitive.PopoverProps {}
 
-const Root = ({ open, ...props }: PopoverProps) => {
-  return (
-    <PopoverContext.Provider value={{ open }}>
-      <Primitive.Root {...props} open={open} />
-    </PopoverContext.Provider>
-  );
-};
+const Root = (props: PopoverProps) => <Primitive.Root {...props} />;
 
 export interface PopoverTriggerProps extends Primitive.PopoverTriggerProps {}
 
@@ -32,33 +22,20 @@ export interface PopoverContentProps extends Primitive.PopoverContentProps {}
 
 const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
   (props, ref) => {
-    const { open } = useContext(PopoverContext);
-
     return (
-      <Transition
-        show={open}
-        as={Fragment}
-        enter="ease-out duration-100"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="ease-in duration-100"
-        leaveTo="opacity-0 scale-95"
+      <Primitive.Content
+        sideOffset={5}
+        {...props}
+        ref={ref}
+        className={c(
+          "w-screen max-w-md bg-base-200 fill-base-200 p-3 rounded shadow text-base-content z-50 sm:w-fit",
+          props.className,
+        )}
       >
-        <Primitive.Content
-          sideOffset={5}
-          {...props}
-          ref={ref}
-          forceMount
-          className={c(
-            "w-screen max-w-md bg-base-200 p-3 rounded shadow text-base-content z-50 sm:w-fit",
-            props.className,
-          )}
-        >
-          <Primitive.Arrow className="fill-base-200" />
+        <Primitive.Arrow className="fill-inherit" />
 
-          {props.children}
-        </Primitive.Content>
-      </Transition>
+        {props.children}
+      </Primitive.Content>
     );
   },
 );
