@@ -1,14 +1,19 @@
 import { cva } from "class-variance-authority";
 
 export const switchRoot = cva(
-  "bg-base-200 rounded-full relative outline-none transition-colors disabled:opacity-50",
+  [
+    "bg-base-200 rounded-full relative outline-none transition-colors",
+    "focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-300",
+    "disabled:opacity-50",
+  ],
   {
     variants: {
       size: { sm: "w-8 h-4", md: "w-10 h-5", lg: "w-12 h-6", xl: "w-16 h-8" },
       theme: {
-        primary: "data-[state=checked]:bg-primary-500",
-        secondary: "data-[state=checked]:bg-secondary-500",
-        success: "data-[state=checked]:bg-emerald-500",
+        primary: "data-[state=checked]:bg-primary-500 focus:ring-primary-500",
+        secondary:
+          "data-[state=checked]:bg-secondary-500 focus:ring-secondary-500",
+        success: "data-[state=checked]:bg-emerald-500 focus:ring-emerald-500",
       },
     },
     defaultVariants: {
