@@ -1,5 +1,24 @@
 # @c6r/react
 
+## 1.7.0
+
+### Minor Changes
+
+- 4ec63a1: Minor
+
+  - **New components**
+
+    - Alert
+    - RadioGroup
+    - Tooltip
+
+  - **Refactor**
+    - Popover
+      - use context
+      - prevent unmount in order to run transition properly
+    - Switch
+      - add focus styling
+
 ## 1.6.0
 
 ### Minor Changes
