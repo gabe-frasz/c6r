@@ -13,7 +13,11 @@ export interface TooltipProps extends Primitive.TooltipProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const Provider = Primitive.Provider;
+export interface TooltipProviderProps extends Primitive.TooltipProviderProps {}
+
+const Provider = (props: TooltipProviderProps) => (
+  <Primitive.Provider {...props} />
+);
 
 const Root = (props: TooltipProps) => {
   const context = {
