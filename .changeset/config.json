@@ -6,6 +6,6 @@
   "commit": true,
   "fixed": [],
   "linked": [],
-  "ignore": ["@c6r/docs"],
+  "ignore": ["@c6r/docs", "components-preview"],
   "updateInternalDependencies": "patch"
 }
