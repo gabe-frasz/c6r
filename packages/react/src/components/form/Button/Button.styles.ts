@@ -2,9 +2,10 @@ import { cva } from "class-variance-authority";
 
 export const button = cva(
   [
-    "w-fit px-2 py-1 flex justify-center items-center gap-2 text-sm font-semibold selection:bg-primary-400 uppercase rounded outline-none transition-colors",
+    "w-fit px-3 py-2 flex justify-center items-center gap-2 text-sm font-medium selection:bg-primary-400 rounded outline-none transition-all",
+    "active:scale-95",
     "focus:ring-2 focus:ring-offset-2 focus:ring-offset-base-200",
-    "disabled:opacity-50",
+    "disabled:opacity-50 disabled:active:scale-100",
   ],
   {
     variants: {
@@ -39,7 +40,7 @@ export const button = cva(
         className: [
           "bg-transparent text-primary-500",
           "hover:bg-primary-500 hover:text-primary-50 focus:ring-primary-500",
-          "disabled:hover:text-primary-500 disabled:hover:bg-transparent disabled:hover:bg-transparent",
+          "disabled:hover:text-primary-500 disabled:hover:bg-transparent",
         ],
       },
       {
@@ -48,7 +49,7 @@ export const button = cva(
         className: [
           "bg-transparent text-secondary-500",
           "hover:bg-secondary-500 hover:text-secondary-50 focus:ring-secondary-500",
-          "disabled:hover:text-secondary-500 disabled:hover:bg-transparent disabled:hover:bg-transparent",
+          "disabled:hover:text-secondary-500 disabled:hover:bg-transparent",
         ],
       },
       {
@@ -57,7 +58,7 @@ export const button = cva(
         className: [
           "bg-transparent text-emerald-500",
           "hover:bg-emerald-500 hover:text-emerald-50 focus:ring-emerald-500",
-          "disabled:hover:text-emerald-500 disabled:hover:bg-transparent disabled:hover:bg-transparent",
+          "disabled:hover:text-emerald-500 disabled:hover:bg-transparent",
         ],
       },
       {
@@ -66,7 +67,7 @@ export const button = cva(
         className: [
           "bg-transparent text-rose-500",
           "hover:bg-rose-500 hover:text-rose-50 focus:ring-rose-500",
-          "disabled:hover:text-rose-500 disabled:hover:bg-transparent disabled:hover:bg-transparent",
+          "disabled:hover:text-rose-500 disabled:hover:bg-transparent",
         ],
       },
       {
