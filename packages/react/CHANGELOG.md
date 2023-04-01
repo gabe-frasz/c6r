@@ -5,29 +5,22 @@
 ### Minor Changes
 
 - eaea2e9: minor
-
-  **Build**
-
-  - change build output
-  - remove commonjs support
-
-  **Fix**
-
-  - Alert
-    - add use client directive
+  - **Build**
+    - change build output
+    - remove commonjs support
+  - **Fix**
+    - Alert
+      - add use client directive
 
 ## 1.7.0
 
 ### Minor Changes
 
-- 4ec63a1: Minor
-
+- 4ec63a1: minor
   - **New components**
-
     - Alert
     - RadioGroup
     - Tooltip
-
   - **Refactor**
     - Popover
       - use context
@@ -40,15 +33,11 @@
 ### Minor Changes
 
 - 768bf21:
-
   - **New components**
-
     - Divider
     - Select
     - Spinner
-
   - **Refactor**
-
     - Popover
       - removed open/closed transition
     - Button

@@ -1,3 +1,5 @@
+"use client";
+
 import * as Primitive from "@radix-ui/react-avatar";
 import { UserCircle } from "phosphor-react";
 import { forwardRef } from "react";
