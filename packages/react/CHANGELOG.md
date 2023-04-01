@@ -1,5 +1,21 @@
 # @c6r/react
 
+## 1.8.0
+
+### Minor Changes
+
+- eaea2e9: minor
+
+  **Build**
+
+  - change build output
+  - remove commonjs support
+
+  **Fix**
+
+  - Alert
+    - add use client directive
+
 ## 1.7.0
 
 ### Minor Changes
