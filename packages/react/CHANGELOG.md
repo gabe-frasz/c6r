@@ -1,5 +1,14 @@
 # @c6r/react
 
+## 1.8.1
+
+### Patch Changes
+
+- fd79863: patch
+
+  - **Fix**
+    - add use client directive to all missing components
+
 ## 1.8.0
 
 ### Minor Changes
