@@ -1,9 +1,15 @@
 {
   "extends": "tsconfig/react-library",
   "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": false,
+    "jsx": "react-jsx",
+    "target": "ES6",
+    "outDir": "dist",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["./src"]
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
