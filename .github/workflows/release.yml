@@ -34,7 +34,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: \
+          publish: |
             pnpm run pkg.version
             pnpm run pkg.publish
         env:
