@@ -5,7 +5,7 @@ module.exports = {
   content: [
     "./src/**/*.tsx",
     "./index.html",
-    "./node_modules/@c6r/react/**/index.{js,cjs}",
+    "./node_modules/@c6r/react/dist/**/*.js",
   ],
   theme: {
     extend: {
