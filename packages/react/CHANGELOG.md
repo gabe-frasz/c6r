@@ -1,5 +1,14 @@
 # @c6r/react
 
+## 1.8.2
+
+### Patch Changes
+
+- 22c3368: patch
+
+  - **Refactor**
+    - add "use client" directive to all components
+
 ## 1.8.1
 
 ### Patch Changes
