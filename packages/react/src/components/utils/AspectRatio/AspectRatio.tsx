@@ -1,3 +1,5 @@
+"use client";
+
 import * as Primitive from "@radix-ui/react-aspect-ratio";
 import { forwardRef } from "react";
 
