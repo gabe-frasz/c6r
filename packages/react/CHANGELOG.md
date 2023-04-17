@@ -1,5 +1,19 @@
 # @c6r/react
 
+## 1.8.3
+
+### Patch Changes
+
+- 0586ba1: patch
+
+  - **Fix**
+    - export missing interfaces
+
+- 372ba88: patch
+
+  - **Fix**
+    - remove unwanted attribute from DOM button
+
 ## 1.8.2
 
 ### Patch Changes
