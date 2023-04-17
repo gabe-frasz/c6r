@@ -14,8 +14,8 @@ export interface ButtonProps
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, theme, ...props }, ref) => {
-    const isButtonDisabled = props.isLoading || props.disabled;
+  ({ variant, theme, isLoading, ...props }, ref) => {
+    const isButtonDisabled = isLoading || props.disabled;
 
     return (
       <button
@@ -24,7 +24,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={isButtonDisabled}
         className={c(button({ variant, theme }), props.className)}
       >
-        {props.isLoading ? (
+        {isLoading ? (
           <>
             <Spinner /> Please wait
           </>
