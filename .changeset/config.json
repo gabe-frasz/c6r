@@ -6,6 +6,6 @@
   "commit": true,
   "fixed": [],
   "linked": [],
-  "ignore": ["@c6r/docs", "components-preview"],
+  "ignore": ["next-preview", "eslint-config-custom"],
   "updateInternalDependencies": "patch"
 }
