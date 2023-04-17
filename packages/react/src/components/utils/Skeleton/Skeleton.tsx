@@ -5,7 +5,7 @@ import { forwardRef, HTMLAttributes } from "react";
 
 import { c } from "@/utils";
 
-interface SkeletonProps extends HTMLAttributes<HTMLElement> {
+export interface SkeletonProps extends HTMLAttributes<HTMLElement> {
   asChild?: boolean;
 }
 
@@ -24,7 +24,7 @@ export const Skeleton = forwardRef<HTMLElement, SkeletonProps>((props, ref) => {
 });
 Skeleton.displayName = "Skeleton";
 
-interface SkeletonTextProps extends HTMLAttributes<HTMLElement> {
+export interface SkeletonTextProps extends HTMLAttributes<HTMLElement> {
   lines: number;
   asChild?: boolean;
 }

@@ -8,7 +8,7 @@ import { c } from "@/utils";
 import { switchRoot, switchThumb } from "./Switch.styles";
 import { SwitchContext } from "./SwitchContext";
 
-interface SwitchProps
+export interface SwitchProps
   extends Primitive.SwitchProps,
     VariantProps<typeof switchRoot> {}
 
@@ -27,7 +27,7 @@ const Root = forwardRef<HTMLButtonElement, SwitchProps>(
 );
 Root.displayName = "Switch.Root";
 
-interface SwitchThumbProps extends Primitive.SwitchThumbProps {}
+export interface SwitchThumbProps extends Primitive.SwitchThumbProps {}
 
 const Thumb = forwardRef<HTMLSpanElement, SwitchThumbProps>((props, ref) => {
   const { size } = useContext(SwitchContext);
