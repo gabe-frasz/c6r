@@ -91,3 +91,6 @@ workbox*.js*
 *.mobileprovision
 *.orig.*
 Thumbs.db
+
+# workspace
+apps/next-preview/.vscode/
