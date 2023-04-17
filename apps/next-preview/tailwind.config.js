@@ -3,8 +3,9 @@ const { blue, violet, zinc } = require("tailwindcss/colors");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.tsx",
-    "./index.html",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@c6r/react/dist/**/*.js",
   ],
   theme: {
@@ -12,12 +13,6 @@ module.exports = {
       colors: {
         primary: blue,
         secondary: violet,
-        // base: {
-        //   100: "#DDD",
-        //   200: "#EEE",
-        //   300: "#FFF",
-        //   content: "#000",
-        // },
         base: {
           100: zinc[700],
           200: zinc[800],
