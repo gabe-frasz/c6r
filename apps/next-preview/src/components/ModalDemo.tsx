@@ -1,6 +1,14 @@
 "use client";
 
-import { Button, Modal } from "@c6r/react";
+import {
+  Button,
+  Modal,
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalTitle,
+  ModalTrigger,
+} from "@c6r/react";
 import { useState } from "react";
 
 export const ModalDemo = () => {
@@ -9,46 +17,47 @@ export const ModalDemo = () => {
 
   return (
     <>
-      <Modal.Root
+      <Modal
         open={firstModalOpen}
         onOpenChange={() => setFirstModalOpen((prev) => !prev)}
       >
-        <Modal.Trigger asChild>
+        <ModalTrigger asChild>
           <Button>With close button</Button>
-        </Modal.Trigger>
+        </ModalTrigger>
 
-        <Modal.Content>
-          <Modal.Title>Some text</Modal.Title>
+        <ModalContent>
+          <ModalClose />
 
-          <Modal.Description>
+          <ModalTitle>Some text</ModalTitle>
+
+          <ModalDescription>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
             magni quia? Tempore, cumque deleniti facilis minus nam doloremque
             iste. Saepe, quaerat architecto! Nisi cum nobis hic alias dicta
             voluptatibus iusto.
-          </Modal.Description>
-        </Modal.Content>
-      </Modal.Root>
+          </ModalDescription>
+        </ModalContent>
+      </Modal>
 
-      <Modal.Root
+      <Modal
         open={secondModalOpen}
         onOpenChange={() => setSecondModalOpen((prev) => !prev)}
-        hideCloseButton
       >
-        <Modal.Trigger asChild>
+        <ModalTrigger asChild>
           <Button>Without close button</Button>
-        </Modal.Trigger>
+        </ModalTrigger>
 
-        <Modal.Content>
-          <Modal.Title>Some text</Modal.Title>
+        <ModalContent>
+          <ModalTitle>Some text</ModalTitle>
 
-          <Modal.Description>
+          <ModalDescription>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero,
             magni quia? Tempore, cumque deleniti facilis minus nam doloremque
             iste. Saepe, quaerat architecto! Nisi cum nobis hic alias dicta
             voluptatibus iusto.
-          </Modal.Description>
-        </Modal.Content>
-      </Modal.Root>
+          </ModalDescription>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

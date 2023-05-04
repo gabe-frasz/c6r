@@ -1,14 +1,36 @@
 import { AlertDemo } from "@/components/AlertDemo";
-import { AvatarDemo } from "@/components/AvatarDemo";
-import { InputDemo } from "@/components/InputDemo";
 import { ModalDemo } from "@/components/ModalDemo";
 import { PopoverDemo } from "@/components/PopoverDemo";
 import { ProgressDemo } from "@/components/ProgressDemo";
-import { RadioGroupDemo } from "@/components/RadioGroupDemo";
-import { SelectDemo } from "@/components/SelectDemo";
-import { SwitchDemo } from "@/components/SwitchDemo";
 import { TooltipDemo } from "@/components/TooltipDemo";
-import { Button, Checkbox, Heading, Skeleton, Spinner } from "@c6r/react";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
+  Checkbox,
+  Divider,
+  Heading,
+  Input,
+  InputField,
+  InputIcon,
+  Label,
+  RadioGroup,
+  RadioGroupIndicator,
+  RadioGroupItem,
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectIcon,
+  SelectItem,
+  SelectTrigger,
+  Skeleton,
+  SkeletonText,
+  Spinner,
+  Switch,
+  SwitchThumb,
+  Text,
+} from "@c6r/react";
 
 export default function Home() {
   return (
@@ -29,7 +51,19 @@ export default function Home() {
         <Heading>Avatar</Heading>
 
         <div>
-          <AvatarDemo />
+          <Avatar>
+            <AvatarImage src="https://github.com/gabe-frasz.png" />
+
+            <AvatarFallback />
+          </Avatar>
+
+          <Avatar>
+            <AvatarFallback />
+          </Avatar>
+
+          <Avatar className="rounded-none w-fit aspect-auto">
+            <AvatarFallback>custom fallback</AvatarFallback>
+          </Avatar>
         </div>
       </section>
 
@@ -57,7 +91,6 @@ export default function Home() {
           <Button theme="success">Success</Button>
           <Button theme="error">Error</Button>
           <Button disabled>Disabled</Button>
-          <Button isLoading={true}>Whatever</Button>
         </div>
       </section>
 
@@ -87,7 +120,37 @@ export default function Home() {
         <Heading>Input + Label</Heading>
 
         <div>
-          <InputDemo />
+          <Label>
+            <Text>Without icon</Text>
+
+            <Input>
+              <InputField placeholder="Type something..." />
+            </Input>
+          </Label>
+
+          <Label>
+            <Text>Left icon</Text>
+
+            <Input>
+              <InputIcon>
+                <span>🎉</span>
+              </InputIcon>
+
+              <InputField placeholder="Type something..." />
+            </Input>
+          </Label>
+
+          <Label>
+            <Text>Right icon</Text>
+
+            <Input>
+              <InputField placeholder="Type something..." />
+
+              <InputIcon>
+                <span>🎉</span>
+              </InputIcon>
+            </Input>
+          </Label>
         </div>
       </section>
 
@@ -125,7 +188,22 @@ export default function Home() {
         <Heading>Radio Group</Heading>
 
         <div>
-          <RadioGroupDemo />
+          <RadioGroup>
+            <RadioGroupItem value="esqueca">
+              Esqueça
+              <RadioGroupIndicator />
+            </RadioGroupItem>
+
+            <RadioGroupItem value="ai">
+              Ai
+              <RadioGroupIndicator />
+            </RadioGroupItem>
+
+            <RadioGroupItem value="toma">
+              Toma
+              <RadioGroupIndicator />
+            </RadioGroupItem>
+          </RadioGroup>
         </div>
       </section>
 
@@ -133,7 +211,49 @@ export default function Home() {
         <Heading>Select</Heading>
 
         <div>
-          <SelectDemo />
+          <Select>
+            <SelectTrigger placeholder="Choose some item">
+              <SelectIcon />
+            </SelectTrigger>
+
+            <SelectContent>
+              <SelectGroup label="Group 1">
+                <SelectItem value="item-1">Item 1</SelectItem>
+                <SelectItem value="item-2">Item 2</SelectItem>
+                <SelectItem value="item-3">Item 3</SelectItem>
+                <SelectItem value="item-4">Item 4</SelectItem>
+                <SelectItem value="item-5">Item 5</SelectItem>
+                <SelectItem value="item-6">Item 6</SelectItem>
+                <SelectItem value="item-7">Item 7</SelectItem>
+                <SelectItem value="item-8">Item 8</SelectItem>
+                <SelectItem value="item-9">Item 9</SelectItem>
+                <SelectItem value="item-10">Item 10</SelectItem>
+                <SelectItem value="item-11">Item 11</SelectItem>
+                <SelectItem value="item-12">Item 12</SelectItem>
+                <SelectItem value="item-13">Item 13</SelectItem>
+              </SelectGroup>
+
+              <Divider />
+
+              <SelectGroup label="Group 2">
+                <SelectItem disabled value="item-14">
+                  Item 14
+                </SelectItem>
+                <SelectItem value="item-15">Item 15</SelectItem>
+                <SelectItem value="item-16">Item 16</SelectItem>
+                <SelectItem value="item-17">Item 17</SelectItem>
+                <SelectItem value="item-18">Item 18</SelectItem>
+                <SelectItem value="item-19">Item 19</SelectItem>
+                <SelectItem value="item-20">Item 20</SelectItem>
+                <SelectItem value="item-21">Item 21</SelectItem>
+                <SelectItem value="item-22">Item 22</SelectItem>
+                <SelectItem value="item-23">Item 23</SelectItem>
+                <SelectItem value="item-24">Item 24</SelectItem>
+                <SelectItem value="item-25">Item 25</SelectItem>
+                <SelectItem value="item-26">Item 26</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
       </section>
 
@@ -146,7 +266,8 @@ export default function Home() {
               <Skeleton className="mb-4 w-12 aspect-square rounded-full" />
               <Skeleton className="flex-1 h-12" />
             </div>
-            {/* <SkeletonText lines={4} className="gap-4" /> */}
+
+            <SkeletonText lines={4} className="gap-4" />
           </div>
         </div>
       </section>
@@ -163,7 +284,21 @@ export default function Home() {
         <Heading>Switch</Heading>
 
         <div>
-          <SwitchDemo />
+          <Switch defaultChecked size="sm" disabled>
+            <SwitchThumb />
+          </Switch>
+
+          <Switch defaultChecked theme="secondary">
+            <SwitchThumb />
+          </Switch>
+
+          <Switch defaultChecked size="lg" theme="success">
+            <SwitchThumb />
+          </Switch>
+
+          <Switch defaultChecked size="xl">
+            <SwitchThumb />
+          </Switch>
         </div>
       </section>
 

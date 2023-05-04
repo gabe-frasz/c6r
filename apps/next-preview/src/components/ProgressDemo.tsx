@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Progress } from "@c6r/react";
+import { Button, Progress, ProgressIndicator } from "@c6r/react";
 import { useState } from "react";
 
 export const ProgressDemo = () => {
@@ -13,9 +13,9 @@ export const ProgressDemo = () => {
 
   return (
     <div className="flex-1 flex flex-col gap-2">
-      <Progress.Root className="z-40" value={firstProgress}>
-        <Progress.Indicator />
-      </Progress.Root>
+      <Progress className="z-40" value={firstProgress}>
+        <ProgressIndicator />
+      </Progress>
 
       <Button onClick={changeProgress}>Change progress</Button>
     </div>
