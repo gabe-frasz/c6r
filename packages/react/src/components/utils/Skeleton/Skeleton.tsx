@@ -9,19 +9,22 @@ export interface SkeletonProps extends HTMLAttributes<HTMLElement> {
   asChild?: boolean;
 }
 
-export const Skeleton = forwardRef<HTMLElement, SkeletonProps>((props, ref) => {
-  const Comp = props.asChild ? Slot : "div";
+export const Skeleton = forwardRef<HTMLElement, SkeletonProps>(
+  ({ asChild, ...props }, ref) => {
+    const Comp = asChild ? Slot : "div";
 
-  return (
-    <Comp
-      {...props}
-      ref={ref}
-      className={c("bg-neutral-700 animate-pulse rounded-sm", props.className)}
-    >
-      {props.children}
-    </Comp>
-  );
-});
+    return (
+      <Comp
+        {...props}
+        ref={ref}
+        className={c(
+          "bg-neutral-700 animate-pulse rounded-sm",
+          props.className,
+        )}
+      />
+    );
+  },
+);
 Skeleton.displayName = "Skeleton";
 
 export interface SkeletonTextProps extends HTMLAttributes<HTMLElement> {
@@ -30,8 +33,8 @@ export interface SkeletonTextProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const SkeletonText = forwardRef<HTMLElement, SkeletonTextProps>(
-  (props, ref) => {
-    const Comp = props.asChild ? Slot : "div";
+  ({ asChild, ...props }, ref) => {
+    const Comp = asChild ? Slot : "div";
 
     return (
       <Comp
@@ -45,7 +48,7 @@ export const SkeletonText = forwardRef<HTMLElement, SkeletonTextProps>(
           return (
             <Skeleton
               key={i}
-              className={`w-full h-4 ${isLastLine ? "w-3/4" : ""}`}
+              className={c("w-full h-4", { "w-3/4": isLastLine })}
             />
           );
         })}

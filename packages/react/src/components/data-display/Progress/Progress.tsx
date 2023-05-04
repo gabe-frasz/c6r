@@ -10,7 +10,7 @@ export interface ProgressProps extends Primitive.ProgressProps {
   value: number;
 }
 
-const Root = forwardRef<HTMLDivElement, ProgressProps>(
+export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   ({ value, ...props }, ref) => {
     return (
       <ProgressContext.Provider value={{ value }}>
@@ -27,12 +27,12 @@ const Root = forwardRef<HTMLDivElement, ProgressProps>(
     );
   },
 );
-Root.displayName = "Progress.Root";
+Progress.displayName = "Progress.Root";
 
 export interface ProgressIndicatorProps
   extends Primitive.ProgressIndicatorProps {}
 
-const Indicator = forwardRef<HTMLDivElement, ProgressIndicatorProps>(
+export const ProgressIndicator = forwardRef<HTMLDivElement, ProgressIndicatorProps>(
   (props, ref) => {
     const { value } = useContext(ProgressContext);
 
@@ -48,9 +48,4 @@ const Indicator = forwardRef<HTMLDivElement, ProgressIndicatorProps>(
     );
   },
 );
-Indicator.displayName = "Progress.Indicator";
-
-export const Progress = {
-  Root,
-  Indicator,
-};
+ProgressIndicator.displayName = "Progress.Indicator";

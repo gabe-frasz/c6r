@@ -4,7 +4,6 @@ import { Transition } from "@headlessui/react";
 import * as Primitive from "@radix-ui/react-tooltip";
 import { forwardRef, Fragment, useContext } from "react";
 
-import { Button, type ButtonProps } from "@/components";
 import { c } from "@/utils";
 import { TooltipContext } from "./TooltipContext";
 
@@ -15,43 +14,31 @@ export interface TooltipProps extends Primitive.TooltipProps {
 
 export interface TooltipProviderProps extends Primitive.TooltipProviderProps {}
 
-const Provider = (props: TooltipProviderProps) => (
+export const TooltipProvider = (props: TooltipProviderProps) => (
   <Primitive.Provider {...props} />
 );
 
-const Root = (props: TooltipProps) => {
-  const context = {
-    open: props.open,
-  };
-
+export const Tooltip = ({ open, ...props }: TooltipProps) => {
   return (
-    <TooltipContext.Provider value={context}>
-      <Primitive.Root {...props} />
+    <TooltipContext.Provider value={{ open }}>
+      <Primitive.Root {...props} open={open} />
     </TooltipContext.Provider>
   );
 };
 
-export interface TooltipTriggerProps extends ButtonProps {}
+export interface TooltipTriggerProps extends Primitive.TooltipTriggerProps {}
 
-const Trigger = forwardRef<HTMLButtonElement, TooltipTriggerProps>(
-  (props, ref) => {
-    return (
-      <Primitive.Trigger asChild>
-        <Button
-          variant="ghost"
-          {...props}
-          ref={ref}
-          className={c("rounded-full", props.className)}
-        />
-      </Primitive.Trigger>
-    );
-  },
-);
-Trigger.displayName = "Tooltip.Trigger";
+export const TooltipTrigger = forwardRef<
+  HTMLButtonElement,
+  TooltipTriggerProps
+>((props, ref) => {
+  return <Primitive.Trigger {...props} ref={ref} />;
+});
+TooltipTrigger.displayName = "Tooltip.Trigger";
 
 export interface TooltipContentProps extends Primitive.TooltipContentProps {}
 
-const Content = forwardRef<HTMLDivElement, TooltipContentProps>(
+export const TooltipContent = forwardRef<HTMLDivElement, TooltipContentProps>(
   (props, ref) => {
     const { open } = useContext(TooltipContext);
 
@@ -80,11 +67,4 @@ const Content = forwardRef<HTMLDivElement, TooltipContentProps>(
     );
   },
 );
-Content.displayName = "Tooltip.Content";
-
-export const Tooltip = {
-  Provider,
-  Root,
-  Trigger,
-  Content,
-};
+TooltipContent.displayName = "Tooltip.Content";

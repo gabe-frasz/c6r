@@ -11,30 +11,29 @@ export interface PopoverProps extends Primitive.PopoverProps {
   open: boolean;
 }
 
-const Root = (props: PopoverProps) => {
-  const context = {
-    open: props.open,
-  };
-
+export const Popover = ({ open, ...props }: PopoverProps) => {
   return (
-    <PopoverContext.Provider value={context}>
-      <Primitive.Root {...props} />
+    <PopoverContext.Provider value={{ open }}>
+      <Primitive.Root {...props} open={open} />
     </PopoverContext.Provider>
   );
 };
 
 export interface PopoverTriggerProps extends Primitive.PopoverTriggerProps {}
 
-const Trigger = forwardRef<HTMLButtonElement, PopoverTriggerProps>(
-  (props, ref) => {
-    return <Primitive.Trigger {...props} ref={ref} />;
-  },
-);
-Trigger.displayName = "Popover.Trigger";
+export const PopoverTrigger = forwardRef<
+  HTMLButtonElement,
+  PopoverTriggerProps
+>((props, ref) => {
+  return <Primitive.Trigger {...props} ref={ref} />;
+});
+PopoverTrigger.displayName = "Popover.Trigger";
 
-export interface PopoverContentProps extends Primitive.PopoverContentProps {}
+export interface PopoverContentProps extends Primitive.PopoverContentProps {
+  arrowClassName?: string;
+}
 
-const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
+export const PopoverContent = forwardRef<HTMLDivElement, PopoverContentProps>(
   (props, ref) => {
     const { open } = useContext(PopoverContext);
 
@@ -59,7 +58,9 @@ const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
             props.className,
           )}
         >
-          <Primitive.Arrow className="fill-inherit" />
+          <Primitive.Arrow
+            className={c("fill-inherit", props.arrowClassName)}
+          />
 
           {props.children}
         </Primitive.Content>
@@ -67,10 +68,4 @@ const Content = forwardRef<HTMLDivElement, PopoverContentProps>(
     );
   },
 );
-Content.displayName = "Popover.Content";
-
-export const Popover = {
-  Root,
-  Trigger,
-  Content,
-};
+PopoverContent.displayName = "Popover.Content";

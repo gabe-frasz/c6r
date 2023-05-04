@@ -19,7 +19,6 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(
         <Root
           {...props}
           ref={ref}
-          htmlFor={props.htmlFor}
           className={c(label({ flex }), props.className)}
         />
       </Text>

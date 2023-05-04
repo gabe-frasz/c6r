@@ -8,7 +8,7 @@ import { c } from "@/utils";
 
 export interface AvatarProps extends Primitive.AvatarProps {}
 
-const Root = forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
+export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
   return (
     <Primitive.Root
       {...props}
@@ -20,27 +20,29 @@ const Root = forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
     />
   );
 });
-Root.displayName = "Avatar.Root";
+Avatar.displayName = Primitive.Root.displayName;
 
 export interface AvatarImageProps extends Primitive.AvatarImageProps {}
 
-const Image = forwardRef<HTMLImageElement, AvatarImageProps>((props, ref) => {
-  return (
-    <Primitive.Image
-      {...props}
-      ref={ref}
-      className={c(
-        "h-full w-full rounded-[inherit] object-cover",
-        props.className,
-      )}
-    />
-  );
-});
-Image.displayName = "Avatar.Image";
+export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>(
+  (props, ref) => {
+    return (
+      <Primitive.Image
+        {...props}
+        ref={ref}
+        className={c(
+          "h-full w-full rounded-[inherit] object-cover",
+          props.className,
+        )}
+      />
+    );
+  },
+);
+AvatarImage.displayName = Primitive.Image.displayName;
 
 export interface AvatarFallbackProps extends Primitive.AvatarFallbackProps {}
 
-const Fallback = forwardRef<HTMLSpanElement, AvatarFallbackProps>(
+export const AvatarFallback = forwardRef<HTMLSpanElement, AvatarFallbackProps>(
   (props, ref) => {
     return (
       <Primitive.Fallback
@@ -64,10 +66,4 @@ const Fallback = forwardRef<HTMLSpanElement, AvatarFallbackProps>(
     );
   },
 );
-Fallback.displayName = "Avatar.Fallback";
-
-export const Avatar = {
-  Root,
-  Image,
-  Fallback,
-};
+AvatarFallback.displayName = Primitive.Fallback.displayName;
