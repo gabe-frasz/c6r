@@ -46,9 +46,9 @@ export const AvatarFallback = forwardRef<HTMLSpanElement, AvatarFallbackProps>(
   (props, ref) => {
     return (
       <Primitive.Fallback
-        delayMs={600}
         {...props}
         ref={ref}
+        delayMs={props.delayMs ?? 600}
         className={c(
           "leading-1 flex h-full w-full items-center justify-center",
           props.className,

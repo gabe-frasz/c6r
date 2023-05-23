@@ -1,15 +1,14 @@
 {
   "name": "@c6r/react",
-  "version": "2.0.0",
-  "description": "UI kit for React by me.",
+  "version": "0.0.1",
+  "description": "UI kit for React",
   "author": "Gabriel VS Frasão <gabrielvitor.frasao@gmail.com>",
   "license": "MIT",
   "keywords": [
+    "ui-kit",
     "react",
     "tailwindcss",
-    "radix-ui",
-    "headlessui",
-    "ui-kit"
+    "radix-ui"
   ],
   "repository": {
     "type": "git",
@@ -22,7 +21,6 @@
     "build": "rm -rf dist && tsc && resolve-tspaths"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.10",
     "@radix-ui/react-alert-dialog": "^1.0.3",
     "@radix-ui/react-avatar": "^1.0.1",
     "@radix-ui/react-checkbox": "^1.0.1",

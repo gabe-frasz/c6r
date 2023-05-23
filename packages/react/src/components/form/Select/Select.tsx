@@ -4,38 +4,26 @@ import * as Primitive from "@radix-ui/react-select";
 import { CaretDown, CaretUp, Check } from "phosphor-react";
 import { forwardRef } from "react";
 
-import { Button, Text, type ButtonProps } from "@/components";
+import { Text } from "@/components";
 import { c } from "@/utils";
 
 export interface SelectProps extends Primitive.SelectProps {}
 
 export const Select = (props: SelectProps) => <Primitive.Root {...props} />;
 
-export interface SelectTriggerProps extends ButtonProps {
-  placeholder: string;
-}
+export interface SelectTriggerProps extends Primitive.SelectTriggerProps {}
 
 export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
-  (props, ref) => {
-    return (
-      <Primitive.Trigger asChild>
-        <Button
-          {...props}
-          ref={ref}
-          className={c(
-            "min-w-[160px] justify-between gap-4 bg-base-200 text-base-content",
-            props.className,
-          )}
-        >
-          <Primitive.Value placeholder={props.placeholder} />
-
-          {props.children}
-        </Button>
-      </Primitive.Trigger>
-    );
-  },
+  (props, ref) => <Primitive.Trigger {...props} ref={ref} />,
 );
 SelectTrigger.displayName = "Select.Trigger";
+
+export interface SelectValueProps extends Primitive.SelectValueProps {}
+
+export const SelectValue = forwardRef<HTMLSpanElement, SelectValueProps>(
+  (props, ref) => <Primitive.Value {...props} ref={ref} />,
+);
+SelectValue.displayName = "Select.Value";
 
 export interface SelectIconProps extends Primitive.SelectIconProps {}
 

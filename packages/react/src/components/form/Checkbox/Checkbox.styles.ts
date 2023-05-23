@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 
 export const indicator = cva(
-  "w-full h-full p-0.5 opacity-0 group-data-[state=checked]:opacity-100 transition-opacity",
+  "w-full h-full p-0.5 flex justify-center items-center opacity-0 group-data-[state=checked]:opacity-100 transition-opacity",
   {
     variants: {
       variant: {

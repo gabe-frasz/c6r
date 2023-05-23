@@ -62,7 +62,12 @@ export {
   type TooltipTriggerProps,
 } from "./data-display/Tooltip";
 export { Button, type ButtonProps } from "./form/Button";
-export { Checkbox, type CheckboxProps } from "./form/Checkbox";
+export {
+  Checkbox,
+  CheckboxIndicator,
+  type CheckboxIndicatorProps,
+  type CheckboxProps,
+} from "./form/Checkbox";
 export {
   Input,
   InputField,
@@ -87,12 +92,14 @@ export {
   SelectIcon,
   SelectItem,
   SelectTrigger,
+  SelectValue,
   type SelectContentProps,
   type SelectGroupProps,
   type SelectIconProps,
   type SelectItemProps,
   type SelectProps,
   type SelectTriggerProps,
+  type SelectValueProps,
 } from "./form/Select";
 export {
   Switch,

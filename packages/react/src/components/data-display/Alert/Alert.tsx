@@ -1,8 +1,7 @@
 "use client";
 
-import { Transition } from "@headlessui/react";
 import * as Primitive from "@radix-ui/react-alert-dialog";
-import { forwardRef, Fragment, useContext } from "react";
+import { forwardRef } from "react";
 
 import {
   Button,
@@ -13,19 +12,11 @@ import {
   type TextProps,
 } from "@/components";
 import { c } from "@/utils";
-import { AlertContext } from "./AlertContext";
 
-export interface AlertProps extends Primitive.AlertDialogProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-}
+export interface AlertProps extends Primitive.AlertDialogProps {}
 
-export const Alert = ({ open, ...props }: AlertProps) => {
-  return (
-    <AlertContext.Provider value={{ open }}>
-      <Primitive.Root {...props} open={open} />
-    </AlertContext.Provider>
-  );
+export const Alert = (props: AlertProps) => {
+  return <Primitive.Root {...props} />;
 };
 
 export interface AlertTriggerProps extends Primitive.AlertDialogTriggerProps {}
@@ -43,46 +34,26 @@ export interface AlertContentProps extends Primitive.AlertDialogContentProps {
 
 export const AlertContent = forwardRef<HTMLDivElement, AlertContentProps>(
   (props, ref) => {
-    const { open } = useContext(AlertContext);
-
     return (
-      <Transition show={open} className="absolute">
-        <Transition.Child
-          as={Fragment}
-          enter="transition-opacity duration-100"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="transition-opacity duration-100"
-          leaveTo="opacity-0"
-        >
-          <Primitive.Overlay
-            forceMount
-            className={c(
-              "fixed inset-0 backdrop-blur-sm bg-black/50 z-50",
-              props.overlayClassName,
-            )}
-          />
-        </Transition.Child>
+      <Primitive.Portal>
+        <Primitive.Overlay
+          className={c(
+            "fixed inset-0 backdrop-blur-sm bg-black/50 z-50",
+            "data-[state=open]:animate-open-dialog-overlay data-[state=closed]:animate-close-dialog-overlay",
+            props.overlayClassName,
+          )}
+        />
 
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-200"
-          enterFrom="opacity-0 translate-y-full sm:translate-y-auto sm:scale-95"
-          enterTo="opacity-100 translate-y-0 sm:translate-y-auto sm:scale-100"
-          leave="ease-in duration-100"
-          leaveTo="opacity-0 translate-y-full sm:translate-y-auto sm:scale-95"
-        >
-          <Primitive.Content
-            {...props}
-            ref={ref}
-            forceMount
-            className={c(
-              "w-full fixed p-6 bg-base-100 rounded shadow z-50 left-0 bottom-0 sm:max-w-md sm:bottom-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2",
-              props.className,
-            )}
-          />
-        </Transition.Child>
-      </Transition>
+        <Primitive.Content
+          {...props}
+          ref={ref}
+          className={c(
+            "w-full fixed left-0 bottom-0 p-6 bg-base-100 rounded shadow z-50 sm:max-w-md sm:bottom-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2",
+            "data-[state=open]:animate-open-dialog-mobile data-[state=closed]:animate-close-dialog-mobile sm:data-[state=open]:animate-open-dialog-desktop sm:data-[state=closed]:animate-close-dialog-desktop",
+            props.className,
+          )}
+        />
+      </Primitive.Portal>
     );
   },
 );
