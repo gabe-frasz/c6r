@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@c6r/keyframes": "workspace:*",
     "@c6r/react": "workspace:*",
     "@types/node": "18.15.11",
     "@types/react": "18.0.37",

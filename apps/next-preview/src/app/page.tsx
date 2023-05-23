@@ -1,20 +1,33 @@
-import { AlertDemo } from "@/components/AlertDemo";
-import { ModalDemo } from "@/components/ModalDemo";
-import { PopoverDemo } from "@/components/PopoverDemo";
 import { ProgressDemo } from "@/components/ProgressDemo";
-import { TooltipDemo } from "@/components/TooltipDemo";
 import {
+  Alert,
+  AlertAction,
+  AlertCancel,
+  AlertContent,
+  AlertDescription,
+  AlertTitle,
+  AlertTrigger,
   Avatar,
   AvatarFallback,
   AvatarImage,
   Button,
   Checkbox,
+  CheckboxIndicator,
   Divider,
   Heading,
   Input,
   InputField,
   InputIcon,
   Label,
+  Modal,
+  ModalClose,
+  ModalContent,
+  ModalDescription,
+  ModalTitle,
+  ModalTrigger,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
   RadioGroup,
   RadioGroupIndicator,
   RadioGroupItem,
@@ -24,12 +37,17 @@ import {
   SelectIcon,
   SelectItem,
   SelectTrigger,
+  SelectValue,
   Skeleton,
   SkeletonText,
   Spinner,
   Switch,
   SwitchThumb,
   Text,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "@c6r/react";
 
 export default function Home() {
@@ -43,7 +61,27 @@ export default function Home() {
         <Heading>Alert</Heading>
 
         <div>
-          <AlertDemo />
+          <Alert>
+            <AlertTrigger asChild>
+              <Button>Alert</Button>
+            </AlertTrigger>
+
+            <AlertContent>
+              <AlertTitle>Some title</AlertTitle>
+
+              <AlertDescription>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Libero, magni quia? Tempore, cumque deleniti facilis minus nam
+                doloremque iste. Saepe, quaerat architecto! Nisi cum nobis hic
+                alias dicta voluptatibus iusto.
+              </AlertDescription>
+
+              <footer className="mt-4 flex gap-4 justify-end">
+                <AlertCancel>Cancel</AlertCancel>
+                <AlertAction>Do something bad</AlertAction>
+              </footer>
+            </AlertContent>
+          </Alert>
         </div>
       </section>
 
@@ -98,9 +136,19 @@ export default function Home() {
         <Heading>Checkbox</Heading>
 
         <div>
-          <Checkbox defaultChecked />
-          <Checkbox defaultChecked variant="light" theme="secondary" />
-          <Checkbox defaultChecked theme="success" />
+          <Checkbox defaultChecked>
+            <CheckboxIndicator />
+          </Checkbox>
+
+          <Checkbox defaultChecked variant="light" theme="secondary">
+            <CheckboxIndicator />
+          </Checkbox>
+
+          <Checkbox defaultChecked theme="success">
+            <CheckboxIndicator>
+              <span>😎</span>
+            </CheckboxIndicator>
+          </Checkbox>
         </div>
       </section>
 
@@ -164,7 +212,41 @@ export default function Home() {
         <Heading>Modal</Heading>
 
         <div>
-          <ModalDemo />
+          <Modal>
+            <ModalTrigger asChild>
+              <Button>With close button</Button>
+            </ModalTrigger>
+
+            <ModalContent>
+              <ModalClose />
+
+              <ModalTitle>Some text</ModalTitle>
+
+              <ModalDescription>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Libero, magni quia? Tempore, cumque deleniti facilis minus nam
+                doloremque iste. Saepe, quaerat architecto! Nisi cum nobis hic
+                alias dicta voluptatibus iusto.
+              </ModalDescription>
+            </ModalContent>
+          </Modal>
+
+          <Modal>
+            <ModalTrigger asChild>
+              <Button>Without close button</Button>
+            </ModalTrigger>
+
+            <ModalContent>
+              <ModalTitle>Some text</ModalTitle>
+
+              <ModalDescription>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Libero, magni quia? Tempore, cumque deleniti facilis minus nam
+                doloremque iste. Saepe, quaerat architecto! Nisi cum nobis hic
+                alias dicta voluptatibus iusto.
+              </ModalDescription>
+            </ModalContent>
+          </Modal>
         </div>
       </section>
 
@@ -172,7 +254,20 @@ export default function Home() {
         <Heading>Popover</Heading>
 
         <div>
-          <PopoverDemo />
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" theme="secondary">
+                Show popover
+              </Button>
+            </PopoverTrigger>
+
+            <PopoverContent>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
+              autem facilis ut accusamus eligendi. Libero, dolor repellendus.
+              Enim corporis laborum repudiandae, esse necessitatibus dolore!
+              Perspiciatis ut at numquam cupiditate aperiam.
+            </PopoverContent>
+          </Popover>
         </div>
       </section>
 
@@ -189,18 +284,18 @@ export default function Home() {
 
         <div>
           <RadioGroup>
-            <RadioGroupItem value="esqueca">
-              Esqueça
+            <RadioGroupItem value="lorem">
+              Lorem
               <RadioGroupIndicator />
             </RadioGroupItem>
 
-            <RadioGroupItem value="ai">
-              Ai
+            <RadioGroupItem value="ipsum">
+              Ipsum
               <RadioGroupIndicator />
             </RadioGroupItem>
 
-            <RadioGroupItem value="toma">
-              Toma
+            <RadioGroupItem value="dolor">
+              Dolor
               <RadioGroupIndicator />
             </RadioGroupItem>
           </RadioGroup>
@@ -212,8 +307,12 @@ export default function Home() {
 
         <div>
           <Select>
-            <SelectTrigger placeholder="Choose some item">
-              <SelectIcon />
+            <SelectTrigger asChild>
+              <Button className="min-w-[160px] justify-between gap-4 bg-base-200 text-base-content">
+                <SelectValue placeholder="Choose some item" />
+
+                <SelectIcon />
+              </Button>
             </SelectTrigger>
 
             <SelectContent>
@@ -306,7 +405,17 @@ export default function Home() {
         <Heading>Tooltip</Heading>
 
         <div>
-          <TooltipDemo />
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" className="w-10 h-10 rounded-full">
+                  🎉
+                </Button>
+              </TooltipTrigger>
+
+              <TooltipContent>Lorem ipsum, dolor sit amet</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </section>
     </main>
