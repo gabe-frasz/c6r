@@ -10,21 +10,21 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "changeset": "changeset",
+    "pkg.add": "changeset add",
     "pkg.version": "changeset version",
-    "pkg.publish": "turbo run build --filter='./packages/*' && changeset publish"
+    "pkg.publish": "turbo run build --filter=\"./packages/*\" && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-gabe": "^0.0.5",
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
     "node": "^18.0.0"
   },
-  "packageManager": "pnpm@7.26.3",
+  "packageManager": "pnpm@8.1.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

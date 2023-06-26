@@ -5,9 +5,9 @@ import { forwardRef } from "react";
 
 import { c } from "@/utils";
 
-export interface TooltipProps extends Primitive.TooltipProps {}
+export type TooltipProps = Primitive.TooltipProps
 
-export interface TooltipProviderProps extends Primitive.TooltipProviderProps {}
+export type TooltipProviderProps = Primitive.TooltipProviderProps
 
 export const TooltipProvider = (props: TooltipProviderProps) => (
   <Primitive.Provider {...props} />
@@ -15,7 +15,7 @@ export const TooltipProvider = (props: TooltipProviderProps) => (
 
 export const Tooltip = (props: TooltipProps) => <Primitive.Root {...props} />;
 
-export interface TooltipTriggerProps extends Primitive.TooltipTriggerProps {}
+export type TooltipTriggerProps = Primitive.TooltipTriggerProps
 
 export const TooltipTrigger = forwardRef<
   HTMLButtonElement,
@@ -23,7 +23,7 @@ export const TooltipTrigger = forwardRef<
 >((props, ref) => <Primitive.Trigger {...props} ref={ref} />);
 TooltipTrigger.displayName = "Tooltip.Trigger";
 
-export interface TooltipContentProps extends Primitive.TooltipContentProps {}
+export type TooltipContentProps = Primitive.TooltipContentProps
 
 export const TooltipContent = forwardRef<HTMLDivElement, TooltipContentProps>(
   (props, ref) => {

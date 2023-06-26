@@ -13,13 +13,13 @@ import {
 } from "@/components";
 import { c } from "@/utils";
 
-export interface AlertProps extends Primitive.AlertDialogProps {}
+export type AlertProps = Primitive.AlertDialogProps;
 
 export const Alert = (props: AlertProps) => {
   return <Primitive.Root {...props} />;
 };
 
-export interface AlertTriggerProps extends Primitive.AlertDialogTriggerProps {}
+export type AlertTriggerProps = Primitive.AlertDialogTriggerProps;
 
 export const AlertTrigger = forwardRef<HTMLButtonElement, AlertTriggerProps>(
   (props, ref) => {
@@ -59,7 +59,7 @@ export const AlertContent = forwardRef<HTMLDivElement, AlertContentProps>(
 );
 AlertContent.displayName = "Alert.Content";
 
-export interface AlertTitleProps extends HeadingProps {}
+export type AlertTitleProps = HeadingProps;
 
 export const AlertTitle = forwardRef<HTMLHeadingElement, AlertTitleProps>(
   (props, ref) => {
@@ -72,7 +72,7 @@ export const AlertTitle = forwardRef<HTMLHeadingElement, AlertTitleProps>(
 );
 AlertTitle.displayName = "Alert.Title";
 
-export interface AlertDescriptionProps extends TextProps {}
+export type AlertDescriptionProps = TextProps;
 
 export const AlertDescription = forwardRef<HTMLElement, AlertDescriptionProps>(
   (props, ref) => {
@@ -85,7 +85,7 @@ export const AlertDescription = forwardRef<HTMLElement, AlertDescriptionProps>(
 );
 AlertDescription.displayName = "Alert.Description";
 
-export interface AlertCancelProps extends ButtonProps {}
+export type AlertCancelProps = ButtonProps;
 
 export const AlertCancel = forwardRef<HTMLButtonElement, AlertCancelProps>(
   (props, ref) => {
@@ -103,7 +103,7 @@ export const AlertCancel = forwardRef<HTMLButtonElement, AlertCancelProps>(
 );
 AlertCancel.displayName = "Alert.Cancel";
 
-export interface AlertActionProps extends ButtonProps {}
+export type AlertActionProps = ButtonProps;
 
 export const AlertAction = forwardRef<HTMLButtonElement, AlertActionProps>(
   (props, ref) => {

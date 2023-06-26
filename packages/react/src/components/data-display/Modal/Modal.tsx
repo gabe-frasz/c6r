@@ -7,11 +7,11 @@ import { forwardRef } from "react";
 import { Heading, Text, type HeadingProps, type TextProps } from "@/components";
 import { c } from "@/utils";
 
-export interface ModalProps extends Primitive.DialogProps {}
+export type ModalProps = Primitive.DialogProps;
 
 export const Modal = (props: ModalProps) => <Primitive.Root {...props} />;
 
-export interface ModalTriggerProps extends Primitive.DialogTriggerProps {}
+export type ModalTriggerProps = Primitive.DialogTriggerProps;
 
 export const ModalTrigger = forwardRef<HTMLButtonElement, ModalTriggerProps>(
   (props, ref) => <Primitive.Trigger {...props} ref={ref} />,
@@ -49,7 +49,7 @@ export const ModalContent = forwardRef<HTMLDivElement, ModalContentProps>(
 );
 ModalContent.displayName = "Modal.Content";
 
-export interface ModalCloseProps extends Primitive.DialogCloseProps {}
+export type ModalCloseProps = Primitive.DialogCloseProps;
 
 export const ModalClose = forwardRef<HTMLButtonElement, ModalCloseProps>(
   (props, ref) => {
@@ -73,8 +73,9 @@ export const ModalClose = forwardRef<HTMLButtonElement, ModalCloseProps>(
     );
   },
 );
+ModalClose.displayName = "Modal.Close";
 
-export interface ModalTitleProps extends HeadingProps {}
+export type ModalTitleProps = HeadingProps;
 
 export const ModalTitle = forwardRef<HTMLHeadingElement, ModalTitleProps>(
   (props, ref) => {
@@ -87,7 +88,7 @@ export const ModalTitle = forwardRef<HTMLHeadingElement, ModalTitleProps>(
 );
 ModalTitle.displayName = "Modal.Title";
 
-export interface ModalDescriptionProps extends TextProps {}
+export type ModalDescriptionProps = TextProps;
 
 export const ModalDescription = forwardRef<HTMLElement, ModalDescriptionProps>(
   (props, ref) => {

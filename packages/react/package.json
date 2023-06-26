@@ -18,7 +18,9 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "rm -rf dist && tsc && resolve-tspaths"
+    "build": "rm -rf dist && tsc && resolve-tspaths",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
+    "lint.fix": "eslint \"./src/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.3",
@@ -41,6 +43,8 @@
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "eslint": "^7.23.0",
+    "eslint-config-gabe": "^0.0.5",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

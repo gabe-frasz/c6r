@@ -41,8 +41,7 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
 );
 Checkbox.displayName = "Checkbox";
 
-export interface CheckboxIndicatorProps
-  extends Primitive.CheckboxIndicatorProps {}
+export type CheckboxIndicatorProps = Primitive.CheckboxIndicatorProps
 
 export const CheckboxIndicator = forwardRef<
   HTMLElement,

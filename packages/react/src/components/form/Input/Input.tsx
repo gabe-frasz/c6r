@@ -10,7 +10,7 @@ import {
 
 import { c } from "@/utils";
 
-export interface InputProps extends HTMLAttributes<HTMLDivElement> {}
+export type InputProps = HTMLAttributes<HTMLDivElement>
 
 export const Input = (props: InputProps) => {
   return (
@@ -24,8 +24,7 @@ export const Input = (props: InputProps) => {
   );
 };
 
-export interface InputFieldProps
-  extends InputHTMLAttributes<HTMLInputElement> {}
+export type InputFieldProps = InputHTMLAttributes<HTMLInputElement>
 
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (props, ref) => {

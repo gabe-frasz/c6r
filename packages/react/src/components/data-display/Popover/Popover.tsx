@@ -5,11 +5,11 @@ import { forwardRef } from "react";
 
 import { c } from "@/utils";
 
-export interface PopoverProps extends Primitive.PopoverProps {}
+export type PopoverProps = Primitive.PopoverProps
 
 export const Popover = (props: PopoverProps) => <Primitive.Root {...props} />;
 
-export interface PopoverTriggerProps extends Primitive.PopoverTriggerProps {}
+export type PopoverTriggerProps = Primitive.PopoverTriggerProps
 
 export const PopoverTrigger = forwardRef<
   HTMLButtonElement,

@@ -6,7 +6,7 @@ import { forwardRef } from "react";
 
 import { c } from "@/utils";
 
-export interface RadioGroupProps extends Primitive.RadioGroupProps {}
+export type RadioGroupProps = Primitive.RadioGroupProps
 
 export const RadioGroup = (props: RadioGroupProps) => (
   <Primitive.Root
@@ -15,7 +15,7 @@ export const RadioGroup = (props: RadioGroupProps) => (
   />
 );
 
-export interface RadioGroupItemProps extends Primitive.RadioGroupItemProps {}
+export type RadioGroupItemProps = Primitive.RadioGroupItemProps
 
 export const RadioGroupItem = forwardRef<
   HTMLButtonElement,
@@ -34,8 +34,7 @@ export const RadioGroupItem = forwardRef<
 });
 RadioGroupItem.displayName = "RadioGroup.Item";
 
-export interface RadioGroupIndicatorProps
-  extends Primitive.RadioGroupIndicatorProps {}
+export type RadioGroupIndicatorProps = Primitive.RadioGroupIndicatorProps
 
 export const RadioGroupIndicator = forwardRef<
   HTMLSpanElement,
