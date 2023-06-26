@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 
 import { c } from "@/utils";
 
-export interface DividerProps extends Primitive.SeparatorProps {}
+export type DividerProps = Primitive.SeparatorProps
 
 export const Divider = forwardRef<HTMLDivElement, DividerProps>(
   (props, ref) => {

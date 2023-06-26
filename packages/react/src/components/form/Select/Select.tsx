@@ -7,25 +7,25 @@ import { forwardRef } from "react";
 import { Text } from "@/components";
 import { c } from "@/utils";
 
-export interface SelectProps extends Primitive.SelectProps {}
+export type SelectProps = Primitive.SelectProps
 
 export const Select = (props: SelectProps) => <Primitive.Root {...props} />;
 
-export interface SelectTriggerProps extends Primitive.SelectTriggerProps {}
+export type SelectTriggerProps = Primitive.SelectTriggerProps
 
 export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
   (props, ref) => <Primitive.Trigger {...props} ref={ref} />,
 );
 SelectTrigger.displayName = "Select.Trigger";
 
-export interface SelectValueProps extends Primitive.SelectValueProps {}
+export type SelectValueProps = Primitive.SelectValueProps
 
 export const SelectValue = forwardRef<HTMLSpanElement, SelectValueProps>(
   (props, ref) => <Primitive.Value {...props} ref={ref} />,
 );
 SelectValue.displayName = "Select.Value";
 
-export interface SelectIconProps extends Primitive.SelectIconProps {}
+export type SelectIconProps = Primitive.SelectIconProps
 
 export const SelectIcon = (props: SelectIconProps) => {
   return (
@@ -35,7 +35,7 @@ export const SelectIcon = (props: SelectIconProps) => {
   );
 };
 
-export interface SelectContentProps extends Primitive.SelectContentProps {}
+export type SelectContentProps = Primitive.SelectContentProps
 
 export const SelectContent = forwardRef<HTMLDivElement, SelectContentProps>(
   (props, ref) => {
@@ -89,7 +89,7 @@ export const SelectGroup = forwardRef<HTMLDivElement, SelectGroupProps>(
 );
 SelectGroup.displayName = "Select.Group";
 
-export interface SelectItemProps extends Primitive.SelectItemProps {}
+export type SelectItemProps = Primitive.SelectItemProps
 
 export const SelectItem = forwardRef<HTMLDivElement, SelectItemProps>(
   (props, ref) => {

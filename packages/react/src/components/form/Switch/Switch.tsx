@@ -13,7 +13,7 @@ export interface SwitchProps
     VariantProps<typeof switchRoot> {}
 
 export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
-  ({ checked, size, theme, ...props }, ref) => {
+  ({ size, theme, ...props }, ref) => {
     return (
       <SwitchContext.Provider value={{ size }}>
         <Primitive.Root
@@ -27,7 +27,7 @@ export const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
 );
 Switch.displayName = "Switch.Root";
 
-export interface SwitchThumbProps extends Primitive.SwitchThumbProps {}
+export type SwitchThumbProps = Primitive.SwitchThumbProps;
 
 export const SwitchThumb = forwardRef<HTMLSpanElement, SwitchThumbProps>(
   (props, ref) => {

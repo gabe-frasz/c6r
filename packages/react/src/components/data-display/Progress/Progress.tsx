@@ -29,8 +29,7 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
 );
 Progress.displayName = "Progress.Root";
 
-export interface ProgressIndicatorProps
-  extends Primitive.ProgressIndicatorProps {}
+export type ProgressIndicatorProps = Primitive.ProgressIndicatorProps
 
 export const ProgressIndicator = forwardRef<HTMLDivElement, ProgressIndicatorProps>(
   (props, ref) => {

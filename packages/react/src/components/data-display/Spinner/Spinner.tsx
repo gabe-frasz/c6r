@@ -4,7 +4,7 @@ import { CircleNotch, type IconProps } from "phosphor-react";
 
 import { c } from "@/utils";
 
-export interface SpinnerProps extends IconProps {}
+export type SpinnerProps = IconProps
 
 export const Spinner = (props: SpinnerProps) => {
   return (

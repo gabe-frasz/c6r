@@ -6,7 +6,7 @@ import { forwardRef } from "react";
 
 import { c } from "@/utils";
 
-export interface AvatarProps extends Primitive.AvatarProps {}
+export type AvatarProps = Primitive.AvatarProps
 
 export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
   return (
@@ -22,7 +22,7 @@ export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>((props, ref) => {
 });
 Avatar.displayName = Primitive.Root.displayName;
 
-export interface AvatarImageProps extends Primitive.AvatarImageProps {}
+export type AvatarImageProps = Primitive.AvatarImageProps
 
 export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>(
   (props, ref) => {
@@ -40,7 +40,7 @@ export const AvatarImage = forwardRef<HTMLImageElement, AvatarImageProps>(
 );
 AvatarImage.displayName = Primitive.Image.displayName;
 
-export interface AvatarFallbackProps extends Primitive.AvatarFallbackProps {}
+export type AvatarFallbackProps = Primitive.AvatarFallbackProps
 
 export const AvatarFallback = forwardRef<HTMLSpanElement, AvatarFallbackProps>(
   (props, ref) => {
