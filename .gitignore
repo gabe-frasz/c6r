@@ -93,4 +93,4 @@ workbox*.js*
 Thumbs.db
 
 # workspace
-apps/next-preview/.vscode/
+apps/preview/.vscode/

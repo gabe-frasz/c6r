@@ -1,7 +1,6 @@
 **/*.log
 **/.DS_Store
 *.
-.vscode/settings.json
 .history
 .yarn
 bazel-*
