@@ -6,6 +6,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "husky install",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
@@ -15,9 +16,12 @@
     "pkg.publish": "turbo run build --filter=\"./packages/*\" && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.0",
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "cz-conventional-changelog": "^3.3.0",
     "eslint-config-gabe": "^0.0.5",
+    "husky": "^8.0.3",
     "prettier": "latest",
     "turbo": "latest"
   },
