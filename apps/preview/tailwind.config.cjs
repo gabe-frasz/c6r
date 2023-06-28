@@ -1,4 +1,11 @@
-const { blue, violet, zinc } = require("tailwindcss/colors");
+const {
+  blue,
+  violet,
+  zinc,
+  emerald,
+  amber,
+  rose,
+} = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,6 +20,9 @@ module.exports = {
       colors: {
         primary: blue,
         secondary: violet,
+        success: emerald,
+        warning: amber,
+        error: rose,
         base: {
           100: zinc[700],
           200: zinc[800],

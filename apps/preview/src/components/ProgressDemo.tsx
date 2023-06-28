@@ -12,7 +12,7 @@ export const ProgressDemo = () => {
   }
 
   return (
-    <div className="flex-1 flex flex-col gap-2">
+    <div className="flex flex-1 flex-col gap-2">
       <Progress className="z-40" value={firstProgress}>
         <ProgressIndicator />
       </Progress>

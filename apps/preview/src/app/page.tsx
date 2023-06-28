@@ -1,19 +1,18 @@
 import { ProgressDemo } from "@/components/ProgressDemo";
 import {
-  Alert,
-  AlertAction,
-  AlertCancel,
-  AlertContent,
-  AlertDescription,
-  AlertTitle,
-  AlertTrigger,
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
   Avatar,
   AvatarFallback,
   AvatarImage,
   Button,
   Checkbox,
   CheckboxIndicator,
-  Divider,
   Heading,
   Input,
   InputField,
@@ -38,8 +37,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Separator,
   Skeleton,
-  SkeletonText,
   Spinner,
   Switch,
   SwitchThumb,
@@ -52,36 +51,36 @@ import {
 
 export default function Home() {
   return (
-    <main className="py-16 flex flex-col gap-8 container mx-auto px-4">
-      <Heading size="3xl" asChild>
+    <main className="container mx-auto flex flex-col gap-8 px-4 py-16">
+      <Heading className="text-3xl" asChild>
         <h1>C6R Next Preview</h1>
       </Heading>
 
       <section>
-        <Heading>Alert</Heading>
+        <Heading>Alert Dialog</Heading>
 
         <div>
-          <Alert>
-            <AlertTrigger asChild>
-              <Button>Alert</Button>
-            </AlertTrigger>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button>Show Alert Dialog</Button>
+            </AlertDialogTrigger>
 
-            <AlertContent>
-              <AlertTitle>Some title</AlertTitle>
+            <AlertDialogContent>
+              <AlertDialogTitle>Some title</AlertDialogTitle>
 
-              <AlertDescription>
+              <AlertDialogDescription>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Libero, magni quia? Tempore, cumque deleniti facilis minus nam
                 doloremque iste. Saepe, quaerat architecto! Nisi cum nobis hic
                 alias dicta voluptatibus iusto.
-              </AlertDescription>
+              </AlertDialogDescription>
 
-              <footer className="mt-4 flex gap-4 justify-end">
-                <AlertCancel>Cancel</AlertCancel>
-                <AlertAction>Do something bad</AlertAction>
+              <footer className="mt-4 flex justify-end gap-4">
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction>Do something bad</AlertDialogAction>
               </footer>
-            </AlertContent>
-          </Alert>
+            </AlertDialogContent>
+          </AlertDialog>
         </div>
       </section>
 
@@ -99,7 +98,7 @@ export default function Home() {
             <AvatarFallback />
           </Avatar>
 
-          <Avatar className="rounded-none w-fit aspect-auto">
+          <Avatar className="aspect-auto w-fit rounded-none">
             <AvatarFallback>custom fallback</AvatarFallback>
           </Avatar>
         </div>
@@ -127,6 +126,7 @@ export default function Home() {
           </Button>
           <Button variant="ghost">Ghost</Button>
           <Button theme="success">Success</Button>
+          <Button theme="warning">Warning</Button>
           <Button theme="error">Error</Button>
           <Button disabled>Disabled</Button>
         </div>
@@ -308,7 +308,7 @@ export default function Home() {
         <div>
           <Select>
             <SelectTrigger asChild>
-              <Button className="min-w-[160px] justify-between gap-4 bg-base-200 text-base-content">
+              <Button className="bg-base-200 text-base-content min-w-[160px] justify-between gap-4">
                 <SelectValue placeholder="Choose some item" />
 
                 <SelectIcon />
@@ -332,7 +332,7 @@ export default function Home() {
                 <SelectItem value="item-13">Item 13</SelectItem>
               </SelectGroup>
 
-              <Divider />
+              <Separator />
 
               <SelectGroup label="Group 2">
                 <SelectItem disabled value="item-14">
@@ -360,13 +360,13 @@ export default function Home() {
         <Heading>Skeleton</Heading>
 
         <div>
-          <div className="flex-1 w-full ">
+          <div className="w-full flex-1 ">
             <div className="flex gap-4">
-              <Skeleton className="mb-4 w-12 aspect-square rounded-full" />
-              <Skeleton className="flex-1 h-12" />
+              <Skeleton className="mb-4 aspect-square w-12 rounded-full" />
+              <Skeleton className="h-12 flex-1" />
             </div>
 
-            <SkeletonText lines={4} className="gap-4" />
+            {/* <SkeletonText lines={4} className="gap-4" /> */}
           </div>
         </div>
       </section>
@@ -383,19 +383,19 @@ export default function Home() {
         <Heading>Switch</Heading>
 
         <div>
-          <Switch defaultChecked size="sm" disabled>
+          <Switch defaultChecked disabled>
             <SwitchThumb />
           </Switch>
 
-          <Switch defaultChecked theme="secondary">
+          <Switch defaultChecked>
             <SwitchThumb />
           </Switch>
 
-          <Switch defaultChecked size="lg" theme="success">
+          <Switch defaultChecked>
             <SwitchThumb />
           </Switch>
 
-          <Switch defaultChecked size="xl">
+          <Switch defaultChecked>
             <SwitchThumb />
           </Switch>
         </div>
@@ -408,7 +408,7 @@ export default function Home() {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" className="w-10 h-10 rounded-full">
+                <Button variant="ghost" className="h-10 w-10 rounded-full">
                   🎉
                 </Button>
               </TooltipTrigger>
