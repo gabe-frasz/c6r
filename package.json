@@ -1,16 +1,14 @@
 {
   "name": "c6r",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "postinstall": "husky install",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
+    "lint.fix": "turbo run lint.fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format.check": "prettier --check \"**/*.{ts,tsx,md}\"",
     "pkg.add": "changeset add",
     "pkg.version": "changeset version",
     "pkg.publish": "turbo run build --filter=\"./packages/*\" && changeset publish"
@@ -23,12 +21,9 @@
     "eslint-config-gabe": "^0.0.5",
     "husky": "^8.0.3",
     "prettier": "latest",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "turbo": "latest"
   },
-  "engines": {
-    "node": "^18.0.0"
-  },
-  "packageManager": "pnpm@8.1.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
