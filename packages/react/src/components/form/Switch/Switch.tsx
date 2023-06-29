@@ -1,8 +1,8 @@
 "use client";
 
 import * as Primitive from "@radix-ui/react-switch";
-import { VariantProps } from "class-variance-authority";
 import { forwardRef, useContext } from "react";
+import { type VariantProps } from "tailwind-variants";
 
 import { c } from "@/utils";
 import { switchRoot, switchThumb } from "./Switch.styles";

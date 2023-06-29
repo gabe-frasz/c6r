@@ -10,21 +10,21 @@ import {
 
 import { c } from "@/utils";
 
-export type InputProps = HTMLAttributes<HTMLDivElement>
+export type InputProps = HTMLAttributes<HTMLDivElement>;
 
 export const Input = (props: InputProps) => {
   return (
     <div
       {...props}
       className={c(
-        "w-full h-12 px-3 py-4 flex justify-center items-center gap-3 bg-base-200 text-base-content rounded focus-within:ring-2 focus-within:ring-primary-300 focus-within:ring-offset-2 focus-within:ring-offset-base-100",
+        "bg-base-200 text-base-content focus-within:ring-primary-300 focus-within:ring-offset-base-100 flex h-12 w-full items-center justify-center gap-3 rounded px-3 py-4 focus-within:ring-2 focus-within:ring-offset-2",
         props.className,
       )}
     />
   );
 };
 
-export type InputFieldProps = InputHTMLAttributes<HTMLInputElement>
+export type InputFieldProps = InputHTMLAttributes<HTMLInputElement>;
 
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (props, ref) => {
@@ -33,7 +33,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
         {...props}
         ref={ref}
         className={c(
-          "flex-1 py-4 bg-transparent text-sm rounded placeholder:text-gray-400 focus:outline-none",
+          "flex-1 rounded bg-transparent py-4 text-sm placeholder:text-gray-400 focus:outline-none",
           props.className,
         )}
       />
@@ -53,7 +53,7 @@ export const InputIcon = forwardRef<HTMLSlotElement, InputIconProps>(
       <Slot
         {...props}
         ref={ref}
-        className={c("w-6 h-6 text-primary-300", props.className)}
+        className={c("text-primary-300 h-6 w-6", props.className)}
       />
     );
   },

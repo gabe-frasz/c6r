@@ -1,8 +1,8 @@
 "use client";
 
 import { Root } from "@radix-ui/react-label";
-import { VariantProps } from "class-variance-authority";
-import { forwardRef, LabelHTMLAttributes } from "react";
+import { forwardRef, type LabelHTMLAttributes } from "react";
+import { type VariantProps } from "tailwind-variants";
 
 import { Text } from "@/components";
 import { c } from "@/utils";
@@ -15,7 +15,7 @@ export interface LabelProps
 export const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ flex, ...props }, ref) => {
     return (
-      <Text weight="semibold" asChild>
+      <Text className="font-semibold" asChild>
         <Root
           {...props}
           ref={ref}

@@ -1,6 +1,7 @@
-import { cva } from "class-variance-authority";
+import { tv } from "tailwind-variants";
 
-export const label = cva("flex gap-2 text-base-content", {
+export const label = tv({
+  base: "flex gap-2 text-base-content",
   variants: {
     flex: {
       column: "flex-col",

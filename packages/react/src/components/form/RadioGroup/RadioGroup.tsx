@@ -6,7 +6,7 @@ import { forwardRef } from "react";
 
 import { c } from "@/utils";
 
-export type RadioGroupProps = Primitive.RadioGroupProps
+export type RadioGroupProps = Primitive.RadioGroupProps;
 
 export const RadioGroup = (props: RadioGroupProps) => (
   <Primitive.Root
@@ -15,7 +15,7 @@ export const RadioGroup = (props: RadioGroupProps) => (
   />
 );
 
-export type RadioGroupItemProps = Primitive.RadioGroupItemProps
+export type RadioGroupItemProps = Primitive.RadioGroupItemProps;
 
 export const RadioGroupItem = forwardRef<
   HTMLButtonElement,
@@ -26,7 +26,7 @@ export const RadioGroupItem = forwardRef<
       {...props}
       ref={ref}
       className={c(
-        "flex justify-between items-center gap-4 min-w-[160px] px-3 py-2 bg-base-200 font-medium rounded transition-colors outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-base-300 hover:opacity-90 data-[state=checked]:bg-primary-500 disabled:opacity-50",
+        "bg-base-200 focus:ring-primary-500 focus:ring-offset-base-300 data-[state=checked]:bg-primary-500 flex min-w-[160px] items-center justify-between gap-4 rounded px-3 py-2 font-medium outline-none transition-colors hover:opacity-90 focus:ring-2 focus:ring-offset-2 disabled:opacity-50",
         props.className,
       )}
     />
@@ -34,7 +34,7 @@ export const RadioGroupItem = forwardRef<
 });
 RadioGroupItem.displayName = "RadioGroup.Item";
 
-export type RadioGroupIndicatorProps = Primitive.RadioGroupIndicatorProps
+export type RadioGroupIndicatorProps = Primitive.RadioGroupIndicatorProps;
 
 export const RadioGroupIndicator = forwardRef<
   HTMLSpanElement,
@@ -50,7 +50,7 @@ export const RadioGroupIndicator = forwardRef<
         props.className,
       )}
     >
-      {props.children ? props.children : <CheckCircle size={24} />}
+      {props.children ?? <CheckCircle size={24} />}
     </Primitive.Indicator>
   );
 });

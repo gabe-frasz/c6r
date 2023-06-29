@@ -7,35 +7,26 @@ import { forwardRef } from "react";
 import { Text } from "@/components";
 import { c } from "@/utils";
 
-export type SelectProps = Primitive.SelectProps
+export type SelectProps = Primitive.SelectProps;
+export const Select = Primitive.Root;
 
-export const Select = (props: SelectProps) => <Primitive.Root {...props} />;
+export type SelectTriggerProps = Primitive.SelectTriggerProps;
+export const SelectTrigger = Primitive.Trigger;
 
-export type SelectTriggerProps = Primitive.SelectTriggerProps
+export type SelectValueProps = Primitive.SelectValueProps;
+export const SelectValue = Primitive.Value;
 
-export const SelectTrigger = forwardRef<HTMLButtonElement, SelectTriggerProps>(
-  (props, ref) => <Primitive.Trigger {...props} ref={ref} />,
-);
-SelectTrigger.displayName = "Select.Trigger";
-
-export type SelectValueProps = Primitive.SelectValueProps
-
-export const SelectValue = forwardRef<HTMLSpanElement, SelectValueProps>(
-  (props, ref) => <Primitive.Value {...props} ref={ref} />,
-);
-SelectValue.displayName = "Select.Value";
-
-export type SelectIconProps = Primitive.SelectIconProps
+export type SelectIconProps = Primitive.SelectIconProps;
 
 export const SelectIcon = (props: SelectIconProps) => {
   return (
     <Primitive.Icon {...props}>
-      {props.children ? props.children : <CaretDown weight="bold" />}
+      {props.children ?? <CaretDown weight="bold" />}
     </Primitive.Icon>
   );
 };
 
-export type SelectContentProps = Primitive.SelectContentProps
+export type SelectContentProps = Primitive.SelectContentProps;
 
 export const SelectContent = forwardRef<HTMLDivElement, SelectContentProps>(
   (props, ref) => {
@@ -43,9 +34,9 @@ export const SelectContent = forwardRef<HTMLDivElement, SelectContentProps>(
       <Primitive.Content
         {...props}
         ref={ref}
-        className={c("bg-base-200 rounded z-50", props.className)}
+        className={c("bg-base-200 z-50 rounded", props.className)}
       >
-        <Primitive.ScrollUpButton className="flex justify-center py-1 text-primary-500">
+        <Primitive.ScrollUpButton className="text-primary-500 flex justify-center py-1">
           <CaretUp weight="bold" size={16} />
         </Primitive.ScrollUpButton>
 
@@ -53,7 +44,7 @@ export const SelectContent = forwardRef<HTMLDivElement, SelectContentProps>(
           {props.children}
         </Primitive.Viewport>
 
-        <Primitive.ScrollDownButton className="flex justify-center py-1 text-primary-500">
+        <Primitive.ScrollDownButton className="text-primary-500 flex justify-center py-1">
           <CaretDown weight="bold" size={16} />
         </Primitive.ScrollDownButton>
       </Primitive.Content>
@@ -74,7 +65,7 @@ export const SelectGroup = forwardRef<HTMLDivElement, SelectGroupProps>(
         <Primitive.Label asChild>
           <Text
             className={c(
-              "block mb-2 px-6 text-sm font-semibold text-base-content select-none",
+              "text-base-content mb-2 block select-none px-6 text-sm font-semibold",
               props.labelClassName,
             )}
           >
@@ -89,7 +80,7 @@ export const SelectGroup = forwardRef<HTMLDivElement, SelectGroupProps>(
 );
 SelectGroup.displayName = "Select.Group";
 
-export type SelectItemProps = Primitive.SelectItemProps
+export type SelectItemProps = Primitive.SelectItemProps;
 
 export const SelectItem = forwardRef<HTMLDivElement, SelectItemProps>(
   (props, ref) => {
@@ -97,14 +88,14 @@ export const SelectItem = forwardRef<HTMLDivElement, SelectItemProps>(
       <Primitive.Item
         {...props}
         ref={ref}
-        className="relative flex items-center pr-8 pl-6 py-0.5 text-sm select-none text-base-content/70 rounded cursor-pointer outline-none data-[disabled]:cursor-default data-[disabled]:opacity-30 data-[disabled]:pointer-events-none data-[highlighted]:bg-primary-500 data-[highlighted]:text-primary-50 data-[highlighted]:data-[state=checked]:text-primary-50 data-[state=checked]:text-primary-500 transition-colors"
+        className="text-base-content/70 data-[highlighted]:bg-primary-500 data-[highlighted]:text-primary-50 data-[highlighted]:data-[state=checked]:text-primary-50 data-[state=checked]:text-primary-500 relative flex cursor-pointer select-none items-center rounded py-0.5 pl-6 pr-8 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:cursor-default data-[disabled]:opacity-30"
       >
-        <Primitive.ItemIndicator className="absolute left-0 w-6 inline-flex items-center justify-center">
+        <Primitive.ItemIndicator className="absolute left-0 inline-flex w-6 items-center justify-center">
           <Check weight="bold" />
         </Primitive.ItemIndicator>
 
         <Primitive.ItemText asChild>
-          <Text className="text-inherit font-medium">{props.children}</Text>
+          <Text className="font-medium text-inherit">{props.children}</Text>
         </Primitive.ItemText>
       </Primitive.Item>
     );
