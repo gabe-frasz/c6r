@@ -22,9 +22,9 @@
 
 #### AlertContent
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| overlayClassName | string | - | The classes that will be passed to the background (overlay) of the Alert. |
+| Prop             | Type   | Default | Description                                                               |
+| ---------------- | ------ | ------- | ------------------------------------------------------------------------- |
+| overlayClassName | string | -       | The classes that will be passed to the background (overlay) of the Alert. |
 
 #### AlertCancel
 
@@ -47,9 +47,9 @@ This component renders a [**C6R** Button](#button) and has both Radix and Button
 
 #### AvatarFallback
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| delayMs | number | 600 | Useful for delaying rendering so it only appears for those with slower connections. |
+| Prop    | Type   | Default | Description                                                                         |
+| ------- | ------ | ------- | ----------------------------------------------------------------------------------- |
+| delayMs | number | 600     | Useful for delaying rendering so it only appears for those with slower connections. |
 
 ### Button
 
@@ -57,11 +57,11 @@ This component renders a [**C6R** Button](#button) and has both Radix and Button
 <Button />
 ```
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| asChild | boolean | - | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
-| variant | string | "default" | Change the component style easily. |
-| theme | string | "primary" | Main color of the component. |
+| Prop    | Type    | Default   | Description                                                                                                                                                                           |
+| ------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| asChild | boolean | -         | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
+| variant | string  | "default" | Change the component style easily.                                                                                                                                                    |
+| theme   | string  | "primary" | Main color of the component.                                                                                                                                                          |
 
 ### Checkbox
 
@@ -75,10 +75,10 @@ This component renders a [**C6R** Button](#button) and has both Radix and Button
 
 #### Checkbox
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
+| Prop    | Type   | Default   | Description                        |
+| ------- | ------ | --------- | ---------------------------------- |
 | variant | string | "default" | Change the component style easily. |
-| theme | string | "primary" | Main color of the component. |
+| theme   | string | "primary" | Main color of the component.       |
 
 #### CheckboxIndicator
 
@@ -106,10 +106,10 @@ It renders a default icon when no children is provided. To overwrite it just add
 <Heading />
 ```
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| size | string | "base" | A pre-defined standard for the text size. |
-| asChild | boolean | - | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
+| Prop    | Type    | Default | Description                                                                                                                                                                           |
+| ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| size    | string  | "base"  | A pre-defined standard for the text size.                                                                                                                                             |
+| asChild | boolean | -       | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
 
 ### Input
 
@@ -134,8 +134,8 @@ Place the desired icon inside this component. In order to change the side that t
 <Label />
 ```
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
+| Prop | Type   | Default  | Description                              |
+| ---- | ------ | -------- | ---------------------------------------- |
 | flex | string | "column" | The flex direction inside the component. |
 
 ### Modal
@@ -155,9 +155,9 @@ Place the desired icon inside this component. In order to change the side that t
 
 #### ModalContent
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| overlayClassName | string | - | The classes that will be passed to the background (overlay) of the Alert. |
+| Prop             | Type   | Default | Description                                                               |
+| ---------------- | ------ | ------- | ------------------------------------------------------------------------- |
+| overlayClassName | string | -       | The classes that will be passed to the background (overlay) of the Alert. |
 
 #### ModalClose
 
@@ -184,10 +184,10 @@ It renders a [**C6R** Text](#text).
 
 #### PopoverContent
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| arrowClassName | string | - | The classes that will be passed to the Popover arrow. |
-| sideOffset | number | 5 | The distance in pixels from the anchor. |
+| Prop           | Type   | Default | Description                                           |
+| -------------- | ------ | ------- | ----------------------------------------------------- |
+| arrowClassName | string | -       | The classes that will be passed to the Popover arrow. |
+| sideOffset     | number | 5       | The distance in pixels from the anchor.               |
 
 ### RadioGroup
 
@@ -224,10 +224,10 @@ It renders a default icon when no children is provided. To overwrite it just add
 
 #### SelectGroup
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| label | string | - | The label of the group. |
-| labelClassName | string | - | The classes that will be passed to the SelectGroup label. |
+| Prop           | Type   | Default | Description                                               |
+| -------------- | ------ | ------- | --------------------------------------------------------- |
+| label          | string | -       | The label of the group.                                   |
+| labelClassName | string | -       | The classes that will be passed to the SelectGroup label. |
 
 ### Skeleton
 
@@ -235,9 +235,9 @@ It renders a default icon when no children is provided. To overwrite it just add
 <Skeleton />
 ```
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| asChild | boolean | - | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
+| Prop    | Type    | Default | Description                                                                                                                                                                           |
+| ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| asChild | boolean | -       | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
 
 ### SkeletonText
 
@@ -245,10 +245,10 @@ It renders a default icon when no children is provided. To overwrite it just add
 <SkeletonText />
 ```
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| lines | number | - | Quantity of text lines to display. |
-| asChild | boolean | - | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
+| Prop    | Type    | Default | Description                                                                                                                                                                           |
+| ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| lines   | number  | -       | Quantity of text lines to display.                                                                                                                                                    |
+| asChild | boolean | -       | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
 
 ### Spinner
 
@@ -266,9 +266,9 @@ It renders a default icon when no children is provided. To overwrite it just add
 
 [Base props](https://www.radix-ui.com/docs/primitives/components/switch#api-reference)
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| size | string | "md" | Pre-defined Switch sizes. |
+| Prop  | Type   | Default   | Description                  |
+| ----- | ------ | --------- | ---------------------------- |
+| size  | string | "md"      | Pre-defined Switch sizes.    |
 | theme | string | "primary" | Main color of the component. |
 
 ### Text
@@ -277,7 +277,7 @@ It renders a default icon when no children is provided. To overwrite it just add
 <Text />
 ```
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| size | string | "base" | A pre-defined standard for the text size. |
-| asChild | boolean | - | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |
+| Prop    | Type    | Default | Description                                                                                                                                                                           |
+| ------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| size    | string  | "base"  | A pre-defined standard for the text size.                                                                                                                                             |
+| asChild | boolean | -       | Change the default rendered element for the one passed as a child, merging their props and behavior. Read [Radix guide](https://www.radix-ui.com/docs/primitives/guides/composition). |

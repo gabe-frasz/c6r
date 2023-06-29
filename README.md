@@ -57,10 +57,10 @@ yarn add @c6r/react @c6r/keyframes
 
 - add `"./node_modules/@c6r/react/dist/**/*.js"` to `content` array
 - add color values
-  - `primary`: the color that all the components are based as default ***(required)***
+  - `primary`: the color that all the components are based as default **_(required)_**
   - `secondary`: components with `theme` property can use this color
-  - `base`: used for backgrounds ***(required)***
-- add the keyframes preset ***(required only if you want animated components)***
+  - `base`: used for backgrounds **_(required)_**
+- add the keyframes preset **_(required only if you want animated components)_**
 
 ```js
 # tailwind.config.js
@@ -97,10 +97,8 @@ import { Button } from "@c6r/react";
 
 export function App() {
   return (
-    <Button onClick={() => console.log("something")}>
-      Say something
-    </Button>
-  )
+    <Button onClick={() => console.log("something")}>Say something</Button>
+  );
 }
 ```
 
@@ -116,7 +114,7 @@ The main ways you can customize the components are:
 - through `className` prop
 - creating your own animations with Tailwind keyframes
 
-***Note on Customization***: While **C6R** provides a range of customization options for its components, it is worth noting that the package has its own opinionated design choices. If you require complete control over the styling of your components, we recommend using [Radix](https://www.radix-ui.com/) directly, which offers a more unopinionated approach and allows for extensive customization. Radix can be a great choice if you prefer to build UIs from the ground up, tailoring every aspect to your specific needs.
+**_Note on Customization_**: While **C6R** provides a range of customization options for its components, it is worth noting that the package has its own opinionated design choices. If you require complete control over the styling of your components, we recommend using [Radix](https://www.radix-ui.com/) directly, which offers a more unopinionated approach and allows for extensive customization. Radix can be a great choice if you prefer to build UIs from the ground up, tailoring every aspect to your specific needs.
 
 # Components
 
@@ -159,7 +157,6 @@ Contributions are welcome! If you find a bug, have a feature request, or want to
 - Built from scratch with [Tailwind CSS](https://tailwindcss.com/), [cva](https://cva.style/docs) and [Radix](https://www.radix-ui.com/)
 
 # License & Contact
-
 
 [MIT License](https://github.com/gabe-frasz/$repoName/blob/main/LICENSE) &copy; Gabriel VS Frasão
 
